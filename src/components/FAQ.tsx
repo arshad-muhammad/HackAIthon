@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     question: 'Is it team-based or solo?',
-    answer: 'You can participate alone or form a team of up to 4 members. We highly encourage teaming up to combine different skills and build stronger solutions.'
+    answer: 'You can participate as a team of min 2 members and up to 4 members.'
   },
   {
     question: 'Does it cost anything to register?',
@@ -29,11 +29,11 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-32 relative">
+    <section id="faq" className="py-32 relative">
       <div className="container mx-auto px-6 max-w-3xl">
-        
+
         <div className="text-center mb-20">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -43,7 +43,7 @@ export default function FAQ() {
             <span className="text-samurai-red font-display tracking-widest uppercase text-[10px] font-extrabold">Knowledge Base</span>
             <span className="w-8 h-[1px] bg-samurai-red" />
           </motion.div>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -56,7 +56,7 @@ export default function FAQ() {
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -73,7 +73,7 @@ export default function FAQ() {
                   {openIndex === index ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                 </div>
               </button>
-              
+
               <AnimatePresence>
                 {openIndex === index && (
                   <motion.div

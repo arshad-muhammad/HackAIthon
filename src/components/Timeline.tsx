@@ -11,11 +11,11 @@ const schedule = [
 
 export default function Timeline() {
   return (
-    <section className="py-32 relative">
+    <section id="schedule" className="py-32 relative">
       <div className="container mx-auto px-6 max-w-4xl">
-        
+
         <div className="text-center mb-20">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -25,7 +25,7 @@ export default function Timeline() {
             <span className="text-samurai-red font-display tracking-widest uppercase text-[10px] font-extrabold">The Schedule</span>
             <span className="w-8 h-[1px] bg-samurai-red" />
           </motion.div>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -42,19 +42,18 @@ export default function Timeline() {
 
           <div className="space-y-12">
             {schedule.map((item, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`relative flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-0 ${
-                  index % 2 === 0 ? 'md:flex-row-reverse' : ''
-                }`}
+                className={`relative flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-0 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''
+                  }`}
               >
                 {/* Center Node */}
                 <div className="absolute left-[28px] md:left-1/2 w-3 h-3 rounded-full bg-samurai-red -translate-x-[5.5px] md:-translate-x-1/2 mt-1.5 md:mt-0 box-glow z-10" />
-                
+
                 {/* Content */}
                 <div className={`w-full md:w-1/2 pl-16 md:pl-0 ${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12 text-left md:text-right'}`}>
                   <div className="glass-panel p-6 rounded-xl border border-white/5 hover:border-samurai-red/30 transition-colors group">

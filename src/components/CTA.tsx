@@ -6,7 +6,7 @@ export default function CTA() {
     <section className="py-32 relative overflow-hidden border-t border-white/10">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-samurai-orange/10 rounded-full blur-[100px] pointer-events-none" />
-      
+
       <div className="container mx-auto px-6 relative z-10 text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -25,14 +25,14 @@ export default function CTA() {
             ANSWER THE <br />
             <span className="text-samurai-red">CALL TO BUILD</span>
           </h2>
-          
+
           <p className="text-base leading-[1.6] text-ink-dim max-w-[500px] mx-auto mb-10">
             The challenge awaits. Gather your team, sharpen your skills, and prepare to build the future. Registration closes soon.
           </p>
-          
-          <button className="btn-primary px-10 py-4 text-[13px] font-bold uppercase tracking-[0.1em] transition-transform hover:scale-105">
+
+          <a href="https://unstop.com/p/hackaithon-2026-joy-university-1675805" target="_blank" rel="noopener noreferrer" className="btn-primary inline-block text-center px-10 py-4 text-[13px] font-bold uppercase tracking-[0.1em] transition-transform hover:scale-105">
             Claim Your Spot
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>

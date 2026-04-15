@@ -3,33 +3,33 @@ import { Play, ChevronRight } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-24 md:pt-32 pb-16 md:pb-20 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center pt-24 md:pt-32 pb-16 md:pb-20 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0 bg-samurai-black">
         {/* Video Background */}
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
           className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-screen"
         >
           <source src="/hero-bg.mp4" type="video/mp4" />
         </video>
-        
+
         {/* Overlays for readability and aesthetic */}
         <div className="absolute inset-0 bg-gradient-to-b from-samurai-black/80 via-samurai-black/40 to-samurai-black" />
         <div className="absolute inset-0 bg-radial-glow opacity-60" />
-        
+
         {/* Abstract Calligraphy Strokes (Simulated with CSS shapes/SVG) */}
         <div className="absolute top-[100px] left-[-50px] w-[600px] h-[150px] bg-gradient-to-r from-transparent via-samurai-red to-transparent blur-[60px] -rotate-12 opacity-30 pointer-events-none" />
         <div className="absolute bottom-[100px] right-[-50px] w-[500px] h-[120px] bg-gradient-to-r from-transparent via-samurai-orange to-transparent blur-[50px] rotate-12 opacity-30 pointer-events-none" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 flex flex-col items-center text-center">
-        
+
         {/* Micro-label */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -39,7 +39,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Main Title */}
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, scale: 0.95, filter: 'blur(10px)' }}
           animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
@@ -49,7 +49,7 @@ export default function Hero() {
         </motion.h1>
 
         {/* Subtitle */}
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -73,31 +73,32 @@ export default function Hero() {
         </motion.div>
 
         {/* CTAs */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 w-full sm:w-auto px-6 sm:px-0"
         >
-          <button className="btn-primary w-full sm:w-auto px-10 py-4 text-[13px] font-bold uppercase tracking-[0.1em] transition-transform hover:scale-105">
+          <a href="https://unstop.com/p/hackaithon-2026-joy-university-1675805" target="_blank" rel="noopener noreferrer" className="btn-primary block text-center w-full sm:w-auto px-10 py-4 text-[13px] font-bold uppercase tracking-[0.1em] transition-transform hover:scale-105">
             Register Now
-          </button>
-          
-          <button className="btn-secondary w-full sm:w-auto px-10 py-4 text-[13px] font-bold uppercase tracking-[0.1em] transition-colors hover:bg-white/5">
-            Explore Tracks
+          </a>
+
+          <button
+            onClick={() => document.getElementById('challenge')?.scrollIntoView({ behavior: 'smooth' })}
+            className="btn-secondary w-full sm:w-auto px-10 py-4 text-[13px] font-bold uppercase tracking-[0.1em] transition-colors hover:bg-white/5"
+          >
+            Explore Challenge
           </button>
         </motion.div>
 
         {/* Samurai Visual / Centerpiece */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="mt-12 md:mt-20 relative w-full flex justify-center"
         >
           <svg className="w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[500px] md:h-[500px] text-white opacity-25 grayscale" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <path fill="currentColor" d="M100 20C70 20 40 40 30 70C25 85 25 110 35 130L50 160L100 180L150 160L165 130C175 110 175 85 170 70C160 40 130 20 100 20ZM100 40C120 40 140 55 145 75C150 90 150 110 140 125L100 155L60 125C50 110 50 90 55 75C60 55 80 40 100 40Z"/>
-            <path fill="currentColor" d="M70 85H90V95H70V85ZM110 85H130V95H110V85ZM80 110H120V120H80V110Z"/>
           </svg>
         </motion.div>
       </div>

@@ -2,31 +2,17 @@ import { motion } from 'motion/react';
 import { Target, Zap, Shield, Trophy, Globe, Gift } from 'lucide-react';
 
 const features = [
-  {
-    icon: <Target className="w-6 h-6 text-samurai-orange" />,
-    title: "Precision & Focus",
-    description: "Hone your skills in a distraction-free environment designed for deep work and rapid prototyping."
-  },
-  {
-    icon: <Zap className="w-6 h-6 text-samurai-orange" />,
-    title: "Swift Execution",
-    description: "24 hours to build, test, and deploy. Speed is your advantage. Innovation is your goal."
-  },
-  {
-    icon: <Shield className="w-6 h-6 text-samurai-orange" />,
-    title: "Honor & Glory",
-    description: "Compete with the best minds. Present your creation to elite judges and claim your victory."
-  }
+
 ];
 
 export default function About() {
   return (
-    <section className="py-32 relative">
+    <section id="about" className="py-32 relative">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          
+
           {/* Text Content */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -36,12 +22,12 @@ export default function About() {
               <span className="w-8 h-[1px] bg-samurai-red" />
               <span className="text-samurai-red font-display tracking-widest uppercase text-[10px] font-extrabold">The Mission</span>
             </div>
-            
+
             <h2 className="text-[60px] md:text-[88px] font-black leading-[0.9] uppercase tracking-[-0.04em] mb-8">
               FORGE YOUR <br />
               <span className="text-samurai-red">LEGACY IN CODE</span>
             </h2>
-            
+
             <p className="text-base leading-[1.6] text-ink-dim max-w-[500px] mb-8">
               Hack[AI]thon is not just a competition; it is a proving ground. We bring together the most disciplined and creative developers to solve real-world problems using cutting-edge AI technologies.
             </p>
@@ -81,7 +67,7 @@ export default function About() {
           </motion.div>
 
           {/* Visual Content - Prize Pool */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -91,7 +77,7 @@ export default function About() {
             {/* Main Prize */}
             <div className="relative rounded-3xl border border-white/10 bg-white/[0.02] p-10 text-center overflow-hidden group hover:border-samurai-red/30 transition-colors duration-500">
               <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-samurai-red/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
+
               <div className="relative z-10 flex flex-col items-center">
                 <div className="text-samurai-red font-mono text-xs uppercase tracking-[0.3em] mb-4">Total Prize Pool</div>
                 <div className="text-6xl md:text-8xl font-black text-white tracking-tighter mb-4 font-display">

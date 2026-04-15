@@ -9,7 +9,7 @@ export default function Navbar() {
   const [activeTab, setActiveTab] = useState('Home');
 
   return (
-    <motion.nav 
+    <motion.nav
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -27,12 +27,19 @@ export default function Navbar() {
           {navItems.map((item) => (
             <button
               key={item}
-              onClick={() => setActiveTab(item)}
-              className={`text-[11px] uppercase tracking-[0.15em] font-semibold transition-colors duration-200 ${
-                activeTab === item 
-                  ? 'text-white border-b-2 border-samurai-red pb-1' 
-                  : 'text-ink-dim hover:text-white'
-              }`}
+              onClick={() => {
+                setActiveTab(item);
+                const id = item === 'Schedule' ? 'schedule' : item.toLowerCase();
+                if (window.location.pathname === '/') {
+                  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.href = '/#' + id;
+                }
+              }}
+              className={`text-[11px] uppercase tracking-[0.15em] font-semibold transition-colors duration-200 ${activeTab === item
+                ? 'text-white border-b-2 border-samurai-red pb-1'
+                : 'text-ink-dim hover:text-white'
+                }`}
             >
               {item}
             </button>
@@ -41,10 +48,10 @@ export default function Navbar() {
 
         {/* CTA & Mobile Toggle */}
         <div className="flex items-center gap-4">
-          <button className="hidden md:block btn-primary px-8 py-3 text-[11px] font-bold uppercase tracking-[0.1em] transition-all duration-300">
+          <a href="https://unstop.com/p/hackaithon-2026-joy-university-1675805" target="_blank" rel="noopener noreferrer" className="hidden md:inline-block btn-primary px-8 py-3 text-[11px] font-bold uppercase tracking-[0.1em] transition-all duration-300 text-center">
             REGISTER
-          </button>
-          <button 
+          </a>
+          <button
             className="md:hidden text-gray-300 hover:text-white"
             onClick={() => setIsOpen(!isOpen)}
           >
@@ -55,7 +62,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="absolute top-full left-0 w-full mt-4 glass-panel rounded-2xl p-4 flex flex-col gap-2 md:hidden"
@@ -66,17 +73,22 @@ export default function Navbar() {
               onClick={() => {
                 setActiveTab(item);
                 setIsOpen(false);
+                const id = item === 'Schedule' ? 'schedule' : item.toLowerCase();
+                if (window.location.pathname === '/') {
+                  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.href = '/#' + id;
+                }
               }}
-              className={`p-3 rounded-xl text-left font-medium ${
-                activeTab === item ? 'bg-white/10 text-white' : 'text-gray-400'
-              }`}
+              className={`p-3 rounded-xl text-left font-medium ${activeTab === item ? 'bg-white/10 text-white' : 'text-gray-400'
+                }`}
             >
               {item}
             </button>
           ))}
-          <button className="w-full mt-2 p-3 btn-primary btn-cut text-white font-display tracking-wider">
+          <a href="https://unstop.com/p/hackaithon-2026-joy-university-1675805" target="_blank" rel="noopener noreferrer" className="block text-center w-full mt-2 p-3 btn-primary btn-cut text-white font-display tracking-wider">
             REGISTER NOW
-          </button>
+          </a>
         </motion.div>
       )}
     </motion.nav>
