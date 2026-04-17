@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HACK[AI]THON — SphereHive</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Noto+Serif+JP:wght@300;400;700&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --ink: #0a0a0a;
+            --paper: #f0ebe0;
+            --blood: #c0392b;
+            --gold: #b8860b;
+            --gold-light: #d4a017;
+            --ash: #2a2a2a;
+            --mist: rgba(240, 235, 224, 0.06);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            background: var(--ink);
+            color: var(--paper);
+            font-family: 'Cinzel', serif;
+            overflow: hidden;
+        }
+
+        /* ── LOADING SCREEN ── */
+        #loader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: var(--ink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .loader-count {
+            font-size: clamp(6rem, 20vw, 14rem);
+            font-weight: 900;
+            color: var(--paper);
+            line-height: 1;
+            opacity: 0;
+            transform: scale(1.6);
+            transition: opacity 0.25s ease, transform 0.4s ease;
+            position: absolute;
+            letter-spacing: -0.02em;
+            text-shadow: 0 0 80px rgba(200, 180, 140, 0.3);
+        }
+
+        .loader-count.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .loader-count.exit {
+            opacity: 0;
+            transform: scale(0.5);
+            transition: opacity 0.2s ease, transform 0.25s ease;
+        }
+
+        .loader-slash {
+            position: absolute;
+            width: 3px;
+            height: 0;
+            background: var(--blood);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(25deg);
+            transition: height 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+            box-shadow: 0 0 20px var(--blood);
+        }
+
+        #loader.fade-out {
+            animation: loaderOut 0.6s ease forwards;
+        }
+
+        @keyframes loaderOut {
+            to {
+                opacity: 0;
+                pointer-events: none;
+            }
+        }
+
+        /* ── CANVAS BACKGROUND ── */
+        #bg-canvas {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* ── NOISE GRAIN ── */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        /* ── MAIN CONTAINER ── */
+        #main {
+            position: fixed;
+            inset: 0;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        #main.visible {
+            opacity: 1;
+        }
+
+        /* ── DECORATIVE LINES ── */
+        .h-rule {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 1.2rem 0;
+            opacity: 0.5;
+        }
+
+        /* ── KAMON / CLAN MARK ── */
+        .kamon-wrap {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 1.4rem;
+            position: relative;
+            animation: spinSlow 20s linear infinite;
+        }
+
+        @keyframes spinSlow {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .kamon-wrap svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* ── EYEBROW ── */
+        .eyebrow {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.35em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            opacity: 0.85;
+        }
+
+        /* ── JAPANESE SUBTITLE ── */
+        .jp-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            font-weight: 300;
+            letter-spacing: 0.6em;
+            color: var(--paper);
+            opacity: 0.35;
+            margin-bottom: 1.4rem;
+        }
+
+        /* ── MAIN TITLE ── */
+        .title-block {
+            text-align: center;
+            position: relative;
+        }
+
+        .title-main {
+            font-size: clamp(2.8rem, 9vw, 7rem);
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            line-height: 0.95;
+            color: var(--paper);
+            text-transform: uppercase;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.05em;
+        }
+
+        .bracket {
+            color: var(--blood);
+            font-weight: 400;
+            opacity: 0.9;
+            display: inline;
+        }
+
+        .ai-part {
+            color: var(--gold-light);
+            font-style: italic;
+            text-shadow: 0 0 40px rgba(212, 160, 23, 0.4);
+            position: relative;
+        }
+
+        .ai-part::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gold);
+            transform: scaleX(0);
+            animation: underlineIn 0.8s ease 2.2s forwards;
+        }
+
+        @keyframes underlineIn {
+            to {
+                transform: scaleX(1);
+            }
+        }
+
+        /* ── TAGLINE ── */
+        .tagline {
+            font-family: 'Noto Serif JP', serif;
+            font-size: clamp(0.75rem, 1.8vw, 1rem);
+            font-weight: 300;
+            letter-spacing: 0.22em;
+            color: var(--paper);
+            opacity: 0.55;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        /* ── VERTICAL KANJI STRIPS ── */
+        .kanji-strip {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            writing-mode: vertical-rl;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.4em;
+            color: var(--paper);
+            opacity: 0.06;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .kanji-strip.left {
+            left: 2.5rem;
+        }
+
+        .kanji-strip.right {
+            right: 2.5rem;
+        }
+
+        /* ── CORNER ORNAMENTS ── */
+        .corner {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            border-color: var(--gold);
+            border-style: solid;
+            opacity: 0.3;
+            z-index: 2;
+        }
+
+        .corner.tl {
+            top: 24px;
+            left: 24px;
+            border-width: 1px 0 0 1px;
+        }
+
+        .corner.tr {
+            top: 24px;
+            right: 24px;
+            border-width: 1px 1px 0 0;
+        }
+
+        .corner.bl {
+            bottom: 24px;
+            left: 24px;
+            border-width: 0 0 1px 1px;
+        }
+
+        .corner.br {
+            bottom: 24px;
+            right: 24px;
+            border-width: 0 1px 1px 0;
+        }
+
+        /* ── LAUNCH BTN ── */
+        .btn-wrap {
+            margin-top: 2.6rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #launch-btn {
+            position: relative;
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--paper);
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            padding: 1.1rem 3.2rem;
+            cursor: pointer;
+            overflow: hidden;
+            transition: color 0.3s ease, box-shadow 0.3s ease;
+            z-index: 1;
+        }
+
+        #launch-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            z-index: -1;
+        }
+
+        #launch-btn:hover::before {
+            transform: scaleX(1);
+        }
+
+        #launch-btn:hover {
+            color: var(--ink);
+            box-shadow: 0 0 40px rgba(184, 134, 11, 0.4);
+        }
+
+        #launch-btn .btn-slash {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 1px;
+            height: 100%;
+            background: var(--blood);
+            opacity: 0;
+            transition: opacity 0.2s;
+            transform: rotate(15deg);
+        }
+
+        #launch-btn:hover .btn-slash {
+            opacity: 0.4;
+        }
+
+        /* ── SWORD DECORATIVE ELEMENT ── */
+        .sword-line {
+            position: fixed;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+            opacity: 0.15;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .sword-line.s1 {
+            height: 40vh;
+            top: 0;
+            left: 38%;
+        }
+
+        .sword-line.s2 {
+            height: 30vh;
+            bottom: 0;
+            right: 42%;
+        }
+
+        /* ── POPPERS ── */
+        #popper-canvas {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            pointer-events: none;
+        }
+
+        /* ── REDIRECT OVERLAY ── */
+        #redirect-veil {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            background: var(--ink);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.8s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #redirect-veil.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        #redirect-veil span {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.4em;
+            color: var(--gold);
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- LOADING SCREEN -->
+    <div id="loader">
+        <div class="loader-slash" id="slash"></div>
+        <div class="loader-count" id="c3">3</div>
+        <div class="loader-count" id="c2">2</div>
+        <div class="loader-count" id="c1">1</div>
+        <div class="loader-count" id="cgo"
+            style="color:var(--gold);font-size:clamp(3rem,10vw,6rem);letter-spacing:0.12em;">ENTER</div>
+    </div>
+
+    <!-- BACKGROUND CANVAS -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- CORNER ORNAMENTS -->
+    <div class="corner tl"></div>
+    <div class="corner tr"></div>
+    <div class="corner bl"></div>
+    <div class="corner br"></div>
+
+    <!-- VERTICAL KANJI -->
+    <div class="kanji-strip left">刀　剣　道　義　勇　知　仁</div>
+    <div class="kanji-strip right">武　士　道　誠　礼　忠　名</div>
+
+    <!-- SWORD LINES -->
+    <div class="sword-line s1"></div>
+    <div class="sword-line s2"></div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main">
+        <div class="kamon-wrap">
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="46" stroke="#b8860b" stroke-width="0.8" opacity="0.6" />
+                <circle cx="50" cy="50" r="38" stroke="#b8860b" stroke-width="0.4" opacity="0.4" />
+                <!-- Mitsudomoe style -->
+                <path
+                    d="M50 20 C60 20 68 30 62 40 C70 36 80 40 78 52 C76 60 66 64 58 58 C62 68 56 78 46 76 C38 74 34 64 40 56 C30 60 22 54 24 44 C26 36 36 32 44 38 C38 28 42 20 50 20Z"
+                    stroke="#b8860b" stroke-width="0.8" fill="none" opacity="0.5" />
+                <circle cx="50" cy="50" r="4" fill="#b8860b" opacity="0.7" />
+                <!-- 8 radiating marks -->
+                <line x1="50" y1="8" x2="50" y2="16" stroke="#b8860b" stroke-width="0.6" opacity="0.3" />
+                <line x1="50" y1="84" x2="50" y2="92" stroke="#b8860b" stroke-width="0.6" opacity="0.3" />
+                <line x1="8" y1="50" x2="16" y2="50" stroke="#b8860b" stroke-width="0.6" opacity="0.3" />
+                <line x1="84" y1="50" x2="92" y2="50" stroke="#b8860b" stroke-width="0.6" opacity="0.3" />
+            </svg>
+        </div>
+
+        <p class="eyebrow">SphereHive Presents</p>
+        <p class="jp-title">ハックエーアイソン</p>
+
+        <div class="title-block">
+            <h1 class="title-main">
+                HACK<span class="bracket">[</span><span class="ai-part">AI</span><span class="bracket">]</span>THON
+            </h1>
+        </div>
+
+        <div class="h-rule"></div>
+
+        <p class="tagline">Where Code Meets the Way of the Warrior</p>
+
+        <div class="btn-wrap">
+            <button id="launch-btn" onclick="triggerLaunch()">
+                <span class="btn-slash"></span>
+                ⟢ &nbsp; Enter the Dojo &nbsp; ⟣
+            </button>
+        </div>
+    </div>
+
+    <!-- POPPER CANVAS -->
+    <canvas id="popper-canvas"></canvas>
+
+    <!-- REDIRECT VEIL -->
+    <div id="redirect-veil"><span>Entering the Dojo...</span></div>
+
+    <script>
+        /* ═══════════════════════════════
+           LOADER  3 → 2 → 1 → ENTER
+        ═══════════════════════════════ */
+        (function () {
+            const counts = ['c3', 'c2', 'c1', 'cgo'];
+            const slash = document.getElementById('slash');
+            let i = 0;
+
+            function show(id, delay, slashH) {
+                setTimeout(() => {
+                    if (i > 0) {
+                        const prev = document.getElementById(counts[i - 1]);
+                        prev.classList.add('exit');
+                        setTimeout(() => { prev.classList.remove('visible', 'exit'); }, 250);
+                    }
+                    slash.style.height = slashH;
+                    const el = document.getElementById(id);
+                    el.classList.add('visible');
+                    i++;
+                    if (id === 'cgo') {
+                        setTimeout(() => {
+                            const loader = document.getElementById('loader');
+                            loader.classList.add('fade-out');
+                            setTimeout(() => {
+                                loader.style.display = 'none';
+                                document.getElementById('main').classList.add('visible');
+                            }, 650);
+                        }, 800);
+                    }
+                }, delay);
+            }
+
+            show('c3', 200, '30px');
+            show('c2', 1050, '60px');
+            show('c1', 1850, '100px');
+            show('cgo', 2550, '0px');
+        })();
+
+        /* ═══════════════════════════════
+           BACKGROUND CANVAS — INK WASH
+        ═══════════════════════════════ */
+        (function () {
+            const canvas = document.getElementById('bg-canvas');
+            const ctx = canvas.getContext('2d');
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                draw();
+            }
+
+            function draw() {
+                const W = canvas.width, H = canvas.height;
+                ctx.clearRect(0, 0, W, H);
+
+                // Deep ink base
+                const bg = ctx.createRadialGradient(W * 0.5, H * 0.45, 0, W * 0.5, H * 0.5, W * 0.75);
+                bg.addColorStop(0, '#141414');
+                bg.addColorStop(1, '#050505');
+                ctx.fillStyle = bg;
+                ctx.fillRect(0, 0, W, H);
+
+                // Subtle vignette amber glow center
+                const glow = ctx.createRadialGradient(W * 0.5, H * 0.5, 0, W * 0.5, H * 0.5, W * 0.5);
+                glow.addColorStop(0, 'rgba(184,134,11,0.06)');
+                glow.addColorStop(1, 'transparent');
+                ctx.fillStyle = glow;
+                ctx.fillRect(0, 0, W, H);
+
+                // Ink splatter blobs
+                const blobs = [
+                    { x: 0.12, y: 0.2, r: 0.18, a: 0.03 },
+                    { x: 0.85, y: 0.7, r: 0.22, a: 0.04 },
+                    { x: 0.6, y: 0.1, r: 0.12, a: 0.025 },
+                    { x: 0.3, y: 0.85, r: 0.16, a: 0.03 },
+                ];
+                blobs.forEach(b => {
+                    const rg = ctx.createRadialGradient(W * b.x, H * b.y, 0, W * b.x, H * b.y, W * b.r);
+                    rg.addColorStop(0, `rgba(10,10,10,${b.a * 3})`);
+                    rg.addColorStop(1, 'transparent');
+                    ctx.fillStyle = rg;
+                    ctx.fillRect(0, 0, W, H);
+                });
+
+                // Fine horizontal grid lines (parchment relic)
+                ctx.strokeStyle = 'rgba(184,134,11,0.03)';
+                ctx.lineWidth = 1;
+                for (let y = 0; y < H; y += 60) {
+                    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+                }
+
+                // Blood red distant horizon
+                const horizon = ctx.createLinearGradient(0, H * 0.48, 0, H * 0.55);
+                horizon.addColorStop(0, 'rgba(192,57,43,0.08)');
+                horizon.addColorStop(1, 'transparent');
+                ctx.fillStyle = horizon;
+                ctx.fillRect(0, H * 0.45, W, H * 0.12);
+            }
+
+            window.addEventListener('resize', resize);
+            resize();
+        })();
+
+        /* ═══════════════════════════════
+           POPPERS + REDIRECT
+        ═══════════════════════════════ */
+        function triggerLaunch() {
+            const c = document.getElementById('popper-canvas');
+            const ctx = c.getContext('2d');
+            c.width = window.innerWidth;
+            c.height = window.innerHeight;
+
+            // Colour palette — gold, blood, paper, ink-accent
+            const palette = ['#b8860b', '#d4a017', '#c0392b', '#e8dfc8', '#8b6914', '#922b21', '#f0ebe0'];
+
+            const particles = [];
+
+            // Burst from btn center
+            const bx = window.innerWidth / 2;
+            const by = window.innerHeight / 2;
+
+            for (let i = 0; i < 220; i++) {
+                const angle = Math.random() * Math.PI * 2;
+                const speed = 4 + Math.random() * 14;
+                const size = 4 + Math.random() * 8;
+                const shape = Math.random() > 0.5 ? 'rect' : 'circle'; // sakura petal or confetti
+                particles.push({
+                    x: bx, y: by,
+                    vx: Math.cos(angle) * speed,
+                    vy: Math.sin(angle) * speed - (Math.random() * 4),
+                    color: palette[Math.floor(Math.random() * palette.length)],
+                    size, shape,
+                    rot: Math.random() * Math.PI * 2,
+                    rotV: (Math.random() - 0.5) * 0.25,
+                    alpha: 1,
+                    gravity: 0.28 + Math.random() * 0.15,
+                    decay: 0.012 + Math.random() * 0.006,
+                });
+            }
+
+            // Extra side bursts
+            [[0.15, 0.3], [0.85, 0.3], [0.4, 0.65], [0.6, 0.65]].forEach(([fx, fy], idx) => {
+                setTimeout(() => {
+                    for (let i = 0; i < 60; i++) {
+                        const angle = Math.random() * Math.PI * 2;
+                        const speed = 3 + Math.random() * 9;
+                        particles.push({
+                            x: window.innerWidth * fx, y: window.innerHeight * fy,
+                            vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed - 2,
+                            color: palette[Math.floor(Math.random() * palette.length)],
+                            size: 3 + Math.random() * 6, shape: Math.random() > 0.4 ? 'rect' : 'circle',
+                            rot: Math.random() * Math.PI * 2, rotV: (Math.random() - 0.5) * 0.2,
+                            alpha: 1, gravity: 0.25 + Math.random() * 0.1, decay: 0.014 + Math.random() * 0.005
+                        });
+                    }
+                }, idx * 160);
+            });
+
+            let startTime = null;
+
+            function animate(ts) {
+                if (!startTime) startTime = ts;
+                ctx.clearRect(0, 0, c.width, c.height);
+
+                let alive = false;
+                particles.forEach(p => {
+                    if (p.alpha <= 0) return;
+                    alive = true;
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.vy += p.gravity;
+                    p.rot += p.rotV;
+                    p.alpha -= p.decay;
+
+                    ctx.save();
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate(p.rot);
+                    ctx.globalAlpha = Math.max(0, p.alpha);
+                    ctx.fillStyle = p.color;
+                    if (p.shape === 'rect') {
+                        ctx.fillRect(-p.size / 2, -p.size / 4, p.size, p.size / 2);
+                    } else {
+                        ctx.beginPath();
+                        ctx.arc(0, 0, p.size / 2, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                    ctx.restore();
+                });
+
+                if (alive) {
+                    requestAnimationFrame(animate);
+                } else {
+                    ctx.clearRect(0, 0, c.width, c.height);
+                }
+            }
+
+            requestAnimationFrame(animate);
+
+            // Redirect after 1.8s
+            setTimeout(() => {
+                const veil = document.getElementById('redirect-veil');
+                veil.classList.add('active');
+                setTimeout(() => {
+                    window.open('https://hackaithon.spherehive.in', '_blank');
+                    // fade veil back out
+                    veil.classList.remove('active');
+                }, 900);
+            }, 1800);
+        }
+    </script>
+</body>
+
+</html>
