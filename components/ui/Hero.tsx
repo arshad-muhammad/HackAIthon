@@ -1,109 +1,169 @@
 "use client";
 
-import { motion } from 'motion/react';
-import { Play, ChevronRight } from 'lucide-react';
+import { motion, useScroll, useTransform, useReducedMotion } from "motion/react";
+import { ChevronRight } from "lucide-react";
+import { useRef } from "react";
 
+/**
+ * Cinematic hero – transparent section over the global CinematicBackground.
+ * Composition is intentionally quiet: tiny brand line up top,
+ * a single bold title block in the lower third (film-poster style),
+ * one tagline, one info row, two buttons. Nothing else competes.
+ */
 export default function Hero() {
+  const ref = useRef<HTMLElement | null>(null);
+  const reduce = useReducedMotion();
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+
+  // Gentle, long parallax for the content block.
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, -80]);
+  const fadeOut = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-32 md:pt-48 pb-16 md:pb-20 overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 z-0 bg-samurai-black">
-        {/* Video Background */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-screen"
-        >
-          <source src="/hero-bg.mp4" type="video/mp4" />
-        </video>
-
-        {/* Overlays for readability and aesthetic */}
-        <div className="absolute inset-0 bg-gradient-to-b from-samurai-black/80 via-samurai-black/40 to-samurai-black" />
-        <div className="absolute inset-0 bg-radial-glow opacity-60" />
-
-        {/* Abstract Calligraphy Strokes (Simulated with CSS shapes/SVG) */}
-        <div className="absolute top-[100px] left-[-50px] w-[600px] h-[150px] bg-gradient-to-r from-transparent via-samurai-red to-transparent blur-[60px] -rotate-12 opacity-30 pointer-events-none" />
-        <div className="absolute bottom-[100px] right-[-50px] w-[500px] h-[120px] bg-gradient-to-r from-transparent via-samurai-orange to-transparent blur-[50px] rotate-12 opacity-30 pointer-events-none" />
-      </div>
-
-      <div className="container mx-auto px-6 mt-10 md:mt-6 relative z-10 flex flex-col items-center text-center">
-
-        {/* Micro-label */}
+    <section
+      ref={ref}
+      id="home"
+      className="relative min-h-screen w-full overflow-hidden"
+    >
+      {/* ============== CONTENT ============== */}
+      <motion.div
+        style={reduce ? undefined : { opacity: fadeOut, y: contentY }}
+        className="relative z-10 min-h-screen flex flex-col"
+      >
+        {/* Top wordmark - tiny, restrained */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -6 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="font-mono text-xs md:text-sm text-white/60 tracking-[0.2em] uppercase mb-6"
+          transition={{ duration: 1.4, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          className="pt-32 sm:pt-36 flex justify-center"
         >
-          Sphere Hive, KVGCE <span className="text-samurai-red mx-2">✕</span> Startup Lab, JU Presents
+          <span className="font-mono text-[10px] tracking-[0.5em] uppercase text-white/45">
+            Sphere Hive · Presents
+          </span>
         </motion.div>
 
-        {/* Main Title */}
-        <motion.h1
-          initial={{ opacity: 0, scale: 0.95, filter: 'blur(10px)' }}
-          animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="text-[56px] sm:text-[72px] md:text-[96px] font-black leading-[0.85] tracking-[-0.02em] mb-6 text-white"
-        >
-          HACK<span className="text-samurai-red">[AI]</span>THON
-        </motion.h1>
+        {/* Spacer that lets the background breathe */}
+        <div className="flex-grow" />
 
-        {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-base md:text-xl leading-[1.6] text-ink-dim max-w-[600px] mb-10 px-4 md:px-0 font-light"
-        >
-          A National Level 24-hour innovation event. The battlefield moves to JOY University, Tamil Nadu, where discipline meets innovation.
-        </motion.p>
-
-        {/* Date Badge */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.45 }}
-          className="mb-12 flex items-center gap-4"
-        >
-          <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-samurai-red/50"></div>
-          <div className="font-mono text-sm md:text-base tracking-[0.2em] text-white">
-            MAY 06-07 <span className="text-samurai-red mx-2">//</span> 2026
-          </div>
-          <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-samurai-red/50"></div>
-        </motion.div>
-
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 w-full sm:w-auto px-6 sm:px-0"
-        >
-          <a href="https://unstop.com/p/hackaithon-2026-joy-university-1675805" target="_blank" rel="noopener noreferrer" className="btn-primary block text-center w-full sm:w-auto px-10 py-4 text-[13px] font-bold uppercase tracking-[0.1em] transition-transform hover:scale-105">
-            Register Now
-          </a>
-
-          <button
-            onClick={() => document.getElementById('challenge')?.scrollIntoView({ behavior: 'smooth' })}
-            className="btn-secondary w-full sm:w-auto px-10 py-4 text-[13px] font-bold uppercase tracking-[0.1em] transition-colors hover:bg-white/5"
+        {/* Title block, lower-third - film poster cadence */}
+        <div className="px-6 pb-24 sm:pb-28 md:pb-32 flex flex-col items-center text-center">
+          {/* Screen-reader-only descriptive heading. The visible wordmark
+              below is decorative; this is the keyword-rich semantic H1. */}
+          <h1 className="sr-only">
+            Hack[AI]Thon 2.0 2026 - National AI Hackathon at VRIF VTU Belagavi · 24 hours · Aug 8 - 9, 2026
+          </h1>
+          <motion.div
+            aria-hidden="true"
+            initial={{ opacity: 0, y: 14, filter: "blur(6px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0)" }}
+            transition={{ duration: 1.6, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="font-display font-black text-white tracking-[-0.04em] leading-[0.85] text-[52px] sm:text-[76px] md:text-[104px] lg:text-[120px]"
+            style={{
+              textShadow:
+                "0 2px 30px rgba(220,38,38,0.3), 0 0 60px rgba(0,0,0,0.5)",
+            }}
           >
-            Explore Challenge
-          </button>
-        </motion.div>
+            <div className="flex items-center justify-center gap-1 sm:gap-2 select-none">
+              <span>HACK</span>
+              <img
+                src="/logo-transparent.png"
+                alt="AI Logo"
+                className="h-[1.05em] w-auto object-contain"
+                style={{ filter: "drop-shadow(0 2px 20px rgba(220,38,38,0.45))" }}
+              />
+              <span>THON</span>
+            </div>
+            <span className="text-gradient-purple">2.0</span>
+          </motion.div>
 
-        {/* Samurai Visual / Centerpiece */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-12 md:mt-20 relative w-full flex justify-center"
-        >
-          <svg className="w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[500px] md:h-[500px] text-white opacity-25 grayscale" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          </svg>
-        </motion.div>
-      </div>
+          <motion.div
+            initial={{ scaleX: 0, opacity: 0 }}
+            animate={{ scaleX: 1, opacity: 1 }}
+            transition={{ duration: 1.6, delay: 1.0, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-6 mb-5 h-px w-32 sm:w-40 origin-center bg-gradient-to-r from-transparent via-white/40 to-transparent"
+          />
+
+          <motion.p
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
+            className="font-display text-sm sm:text-base md:text-[17px] tracking-[0.32em] uppercase text-white/70 max-w-2xl"
+          >
+            A National AI Hackathon
+          </motion.p>
+
+          {/* Info row - single line of facts, no chips, no badges */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.2, delay: 1.3 }}
+            className="mt-7 flex items-center gap-3 sm:gap-5 font-mono text-[10px] sm:text-[11px] tracking-[0.3em] uppercase text-white/55"
+          >
+            <span>24 Hours</span>
+            <span className="w-1 h-1 rounded-full bg-white/30" />
+            <span>Aug 08–09 · 2026</span>
+            <span className="w-1 h-1 rounded-full bg-white/30" />
+            <span>VRIF VTU Belagavi</span>
+          </motion.div>
+
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.0, delay: 1.45, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-10 flex flex-col sm:flex-row items-center gap-3"
+          >
+            <a
+              href="https://unstop.com/p/hacknova-sphere-hive-kvg-college-of-engineering-sullia-1693176"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary group h-12 px-7 min-w-[180px] text-[12px] font-bold uppercase tracking-[0.18em]"
+            >
+              <span>Register Now</span>
+              <ChevronRight className="w-4 h-4 -mr-1 transition-transform duration-300 group-hover:translate-x-0.5" />
+            </a>
+
+            <button
+              onClick={() =>
+                document
+                  .getElementById("about")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+              className="btn-secondary h-12 px-7 min-w-[180px] text-[12px] font-bold uppercase tracking-[0.18em]"
+            >
+              Learn More
+            </button>
+          </motion.div>
+        </div>
+      </motion.div>
+
+      {/* Minimal scroll cue */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2, delay: 1.8 }}
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-white/35"
+        aria-hidden
+      >
+        <span className="font-mono text-[9px] tracking-[0.45em] uppercase">
+          Scroll
+        </span>
+        <span className="relative w-px h-10 overflow-hidden bg-white/10">
+          <motion.span
+            className="absolute inset-x-0 top-0 h-3 bg-white/70"
+            animate={{ y: [-12, 40] }}
+            transition={{
+              duration: 2.4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        </span>
+      </motion.div>
     </section>
   );
 }

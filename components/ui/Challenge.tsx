@@ -1,154 +1,136 @@
 "use client";
 
-import { motion } from 'motion/react';
-import { Database, TrendingUp, Search, RefreshCw } from 'lucide-react';
+import { motion } from "motion/react";
 
 const steps = [
   {
-    id: '01',
-    title: 'Analyze Embeddings',
-    description: 'Explore the dataset to find patterns, anomalies, and edge cases.',
-    icon: <Search className="w-8 h-8" />
+    n: "01",
+    title: "Analyze embeddings",
+    desc: "Explore the dataset for patterns, anomalies, and edge cases.",
   },
   {
-    id: '02',
-    title: 'Identify Samples',
-    description: 'Select the most impactful data points that the model struggles with.',
-    icon: <Database className="w-8 h-8" />
+    n: "02",
+    title: "Identify samples",
+    desc: "Select the most impactful data points the model struggles with.",
   },
   {
-    id: '03',
-    title: 'Label Strategically',
-    description: 'Provide high-quality annotations for the selected samples.',
-    icon: <TrendingUp className="w-8 h-8" />
+    n: "03",
+    title: "Label strategically",
+    desc: "Provide high-quality annotations for the chosen samples.",
   },
   {
-    id: '04',
-    title: 'Retrain & Improve',
-    description: 'Feed the new data back into the model to boost accuracy.',
-    icon: <RefreshCw className="w-8 h-8" />
-  }
+    n: "04",
+    title: "Retrain & improve",
+    desc: "Feed the improved data back into the model and measure the lift.",
+  },
 ];
+
+const fade = {
+  initial: { opacity: 0, y: 12 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-10% 0px" },
+  transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as const },
+};
 
 export default function Challenge() {
   return (
-    <section className="py-32 relative bg-samurai-charcoal/30 border-y border-white/5" id="challenge">
+    <section id="challenge" className="min-h-[90vh] flex items-center py-28 md:py-36 relative">
       <div className="container mx-auto px-6">
-        
-        <div className="text-center mb-20">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 mb-4"
+        <div className="cinematic-panel cinematic-panel-left max-w-4xl p-8 md:p-10">
+          {/* Meta rule */}
+          <motion.div
+            {...fade}
+            className="flex items-baseline justify-between border-t border-white/10 pt-5 mb-14 md:mb-20 font-mono text-[10px] tracking-[0.3em] uppercase text-white/45"
           >
-            <span className="w-8 h-[1px] bg-samurai-red" />
-            <span className="text-samurai-red font-display tracking-widest uppercase text-[10px] font-extrabold">The Mission Scroll</span>
-            <span className="w-8 h-[1px] bg-samurai-red" />
+            <span>Challenge - 02</span>
+            <span className="hidden sm:block">Powered by 3LC.ai</span>
           </motion.div>
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-[60px] md:text-[88px] font-black leading-[0.9] uppercase tracking-[-0.04em] mb-6"
+
+          {/* Headline */}
+          <motion.h2
+            {...fade}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] as const }}
+            className="font-display font-black text-white tracking-[-0.035em] leading-[0.92] uppercase text-[44px] sm:text-[68px] md:text-[92px] lg:text-[108px] mb-12 md:mb-16"
           >
-            THE <span className="text-samurai-red">CHALLENGE</span>
+            Improve the data,
+            <br />
+            <span className="text-white/35">not the model.</span>
           </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto font-light"
-          >
-            All participants will compete on the same AI challenge using data-centric methodology.
-          </motion.p>
-        </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h3 className="text-3xl md:text-4xl font-display font-bold mb-6 text-white">
-              Build an image classification model using Data-Centric AI with 3LC.
-            </h3>
-            <p className="text-base leading-[1.6] text-ink-dim mb-6">
-              Participants will train a model on a small labeled dataset and improve performance by strategically labeling additional data using embeddings and model feedback.
-            </p>
-            <div className="glass-panel p-6 border-l-4 border-samurai-red bg-samurai-red/5">
-              <p className="text-lg font-medium text-white italic">
-                "Instead of changing the model architecture, competitors must improve accuracy by improving the dataset itself."
+          {/* Brief */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 mb-20 md:mb-24">
+            <motion.div {...fade} className="lg:col-span-7">
+              <p className="text-[17px] md:text-lg text-white/85 leading-[1.65] mb-5 max-w-2xl">
+                Build an image classification model using data-centric AI with
+                3LC. Train on a small labeled set, then improve performance by
+                strategically labeling additional data using embeddings and model
+                feedback.
               </p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="glass-panel p-8 rounded-2xl border border-white/10 relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-samurai-red/10 blur-[50px] rounded-full" />
-            <h4 className="text-samurai-red font-mono text-sm uppercase font-bold tracking-[0.1em] mb-4">Key Concept</h4>
-            <h3 className="text-2xl font-display font-bold mb-6 text-white">What is Data-Centric AI?</h3>
-            
-            <div className="space-y-6">
-              <div className="flex gap-4">
-                <div className="w-1 h-auto bg-white/20 rounded-full" />
-                <div>
-                  <div className="text-white font-bold mb-1">Traditional AI</div>
-                  <div className="text-sm text-ink-dim">Focuses on improving models and algorithms.</div>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="w-1 h-auto bg-samurai-red rounded-full" />
-                <div>
-                  <div className="text-white font-bold mb-1">Data-Centric AI</div>
-                  <div className="text-sm text-ink-dim">Focuses on improving the quality of data used to train models.</div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map((step, index) => (
-            <motion.div
-              key={step.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative glass-panel rounded-xl p-8 hover:bg-white/[0.02] transition-colors duration-500 border border-white/5 hover:border-samurai-red/30 overflow-hidden"
-            >
-              {/* Background Number */}
-              <div className="absolute -right-4 -top-4 text-8xl font-display font-bold text-white/[0.03] group-hover:text-samurai-red/[0.05] transition-colors duration-500 pointer-events-none">
-                {step.id}
-              </div>
-
-              <div className="text-samurai-red mb-6 transform group-hover:scale-110 transition-transform duration-500 origin-left">
-                {step.icon}
-              </div>
-              
-              <h3 className="text-xl font-display font-bold mb-4 tracking-wide text-white group-hover:text-samurai-red transition-colors">
-                {step.title}
-              </h3>
-              
-              <p className="text-[11px] text-ink-dim leading-[1.4]">
-                {step.description}
+              <p className="text-[15px] md:text-base text-white/55 leading-[1.7] max-w-2xl">
+                Instead of changing model architectures, competitors must improve
+                accuracy by improving the dataset itself.
               </p>
-
-              {/* Bottom Line Indicator */}
-              <div className="absolute bottom-0 left-0 w-0 h-1 bg-samurai-red group-hover:w-full transition-all duration-500 ease-out" />
             </motion.div>
-          ))}
-        </div>
 
+            <motion.div {...fade} className="lg:col-span-5">
+              <div className="border-t border-white/10">
+                <div className="border-b border-white/10 py-4 grid grid-cols-12 gap-4 items-baseline">
+                  <dt className="col-span-5 font-mono text-[10px] tracking-[0.3em] uppercase text-white/45">
+                    Traditional AI
+                  </dt>
+                  <dd className="col-span-7 text-[14px] text-white/55 font-light leading-relaxed">
+                    Improve the model and the algorithm.
+                  </dd>
+                </div>
+                <div className="border-b border-white/10 py-4 grid grid-cols-12 gap-4 items-baseline">
+                  <dt className="col-span-5 font-mono text-[10px] tracking-[0.3em] uppercase text-white">
+                    Data-Centric AI
+                  </dt>
+                  <dd className="col-span-7 text-[14px] text-white/85 font-light leading-relaxed">
+                    Improve the data the model learns from.
+                  </dd>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Steps */}
+          <div className="border-t border-white/10">
+            <div className="flex items-baseline justify-between py-5 font-mono text-[10px] tracking-[0.3em] uppercase text-white/45">
+              <span>Method</span>
+              <span>04 Steps</span>
+            </div>
+
+            <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-white/10">
+              {steps.map((s, i) => (
+                <motion.li
+                  key={s.n}
+                  initial={{ opacity: 0, y: 14 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-10% 0px" }}
+                  transition={{
+                    duration: 0.55,
+                    delay: i * 0.06,
+                    ease: [0.16, 1, 0.3, 1] as const,
+                  }}
+                  className={`group p-7 sm:p-8 transition-colors hover:bg-white/[0.02] ${
+                    i < steps.length - 1 ? "border-b lg:border-b-0 lg:border-r border-white/10" : ""
+                  } ${i % 2 === 1 ? "md:border-l lg:border-l-0 border-white/10" : ""}`}
+                >
+                  <div className="font-mono text-[10px] tracking-[0.3em] text-white/35 mb-6">
+                    / {s.n}
+                  </div>
+                  <div className="font-display text-lg font-black text-white tracking-[-0.01em] uppercase mb-2">
+                    {s.title}
+                  </div>
+                  <p className="text-[13px] text-white/55 leading-relaxed font-light">
+                    {s.desc}
+                  </p>
+                </motion.li>
+              ))}
+            </ol>
+          </div>
+        </div>
       </div>
     </section>
   );
