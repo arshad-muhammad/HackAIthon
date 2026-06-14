@@ -14,7 +14,7 @@ export default function CodeOfConduct() {
                 </h1>
                 <div className="prose prose-invert prose-violet max-w-none font-light leading-relaxed space-y-6">
                     <p>
-                        At HackNova, we are committed to providing a safe, inclusive, and harassment-free experience for everyone, regardless of gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, age, or religion.
+                        At Hack[AI]Thon 2.0, we are committed to providing a safe, inclusive, and harassment-free experience for everyone, regardless of gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, age, or religion.
                     </p>
                     <h2 className="text-2xl font-bold mt-8 mb-4 text-white uppercase tracking-wider">Respect and Discipline</h2>
                     <p>

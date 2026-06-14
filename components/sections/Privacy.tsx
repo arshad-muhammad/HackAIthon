@@ -14,7 +14,7 @@ export default function Privacy() {
                 </h1>
                 <div className="prose prose-invert prose-violet max-w-none font-light leading-relaxed space-y-6">
                     <p>
-                        Your privacy is critically important to us. This Privacy Policy outlines the types of personal information that is received and collected by the HackNova organizing team and how it is used.
+                        Your privacy is critically important to us. This Privacy Policy outlines the types of personal information that is received and collected by the Hack[AI]Thon 2.0 organizing team and how it is used.
                     </p>
                     <h2 className="text-2xl font-bold mt-8 mb-4 text-white uppercase tracking-wider">Information We Collect</h2>
                     <p>

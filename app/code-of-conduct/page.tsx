@@ -5,7 +5,7 @@ import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 export const metadata: Metadata = {
     title: 'Code of Conduct',
     description:
-        'The HackNova 2026 Code of Conduct — our commitment to a safe, inclusive, harassment-free hackathon for every participant.',
+        'The Hack[AI]Thon 2.0 2026 Code of Conduct — our commitment to a safe, inclusive, harassment-free hackathon for every participant.',
     alternates: { canonical: '/code-of-conduct' },
 };
 

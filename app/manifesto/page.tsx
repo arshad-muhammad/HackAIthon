@@ -5,24 +5,24 @@ import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { absoluteUrl, SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Manifesto · Why HackNova is built on Data-Centric AI",
+  title: "Manifesto · Why Hack[AI]Thon 2.0 is built on Data-Centric AI",
   description:
-    "Why HackNova 2026 is built around data-centric AI with 3LC.ai - and why that changes who wins the hackathon. A short read on judgement, taste, and the actual job of an ML engineer.",
+    "Why Hack[AI]Thon 2.0 2026 is built around data-centric AI with 3LC.ai - and why that changes who wins the hackathon. A short read on judgement, taste, and the actual job of an ML engineer.",
   alternates: { canonical: "/manifesto" },
   openGraph: {
     type: "article",
-    title: "HackNova Manifesto - Improve the data, not the model",
+    title: "Hack[AI]Thon 2.0 Manifesto - Improve the data, not the model",
     description:
-      "Why HackNova 2026 is built around data-centric AI with 3LC.ai - and why that changes who wins.",
+      "Why Hack[AI]Thon 2.0 2026 is built around data-centric AI with 3LC.ai - and why that changes who wins.",
     url: absoluteUrl("/manifesto"),
     siteName: SITE.name,
     images: [absoluteUrl("/api/og?team=Manifesto")],
   },
   twitter: {
     card: "summary_large_image",
-    title: "HackNova Manifesto - Improve the data, not the model",
+    title: "Hack[AI]Thon 2.0 Manifesto - Improve the data, not the model",
     description:
-      "Why HackNova 2026 is built around data-centric AI with 3LC.ai.",
+      "Why Hack[AI]Thon 2.0 2026 is built around data-centric AI with 3LC.ai.",
     images: [absoluteUrl("/api/og?team=Manifesto")],
   },
 };
@@ -60,7 +60,7 @@ export default function ManifestoPage() {
         <p className="text-white/85 text-lg leading-[1.7] mb-10">
           Most AI competitions reward whoever has the most compute, the most
           recent paper, and the patience to babysit a training run for fifteen
-          hours. HackNova is built differently. The model is fixed. The
+          hours. Hack[AI]Thon 2.0 is built differently. The model is fixed. The
           architecture is fixed. The only thing you can change is the dataset
           itself - and that is where the real signal lives.
         </p>
@@ -130,7 +130,7 @@ export default function ManifestoPage() {
           </p>
           <p>
             If that sounds like you - or like someone you want to become for a
-            weekend - register your team and meet us in Tirupati.
+            weekend - register your team and meet us in Belagavi.
           </p>
         </Section>
 
@@ -141,7 +141,7 @@ export default function ManifestoPage() {
               Bring your A-team.
             </div>
             <p className="text-sm text-white/55 mt-1">
-              Aug 08 - 09, 2026 · IIT Tirupati
+              Aug 08 - 09, 2026 · VRIF VTU Belagavi
             </p>
           </div>
           <a

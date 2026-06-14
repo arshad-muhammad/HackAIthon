@@ -2,7 +2,8 @@ import React from 'react';
 import type { Metadata, Viewport } from 'next';
 import Navbar from '@/components/ui/Navbar';
 import Footer from '@/components/ui/Footer';
-import StarField from '@/components/ui/StarField';
+import CinematicBackground from '@/components/ui/CinematicBackground';
+import SmoothScroll from '@/components/ui/SmoothScroll';
 import ScrollProgress from '@/components/ui/ScrollProgress';
 import IntroSplash from '@/components/ui/IntroSplash';
 import CommandPalette from '@/components/ui/CommandPalette';
@@ -14,9 +15,9 @@ import {
 import { SITE, absoluteUrl } from '@/lib/site';
 import './globals.css';
 
-const TITLE = `${SITE.brand} | National AI Hackathon · 24 Hours · IIT Tirupati`;
+const TITLE = `${SITE.brand} | National AI Hackathon · 24 Hours · VRIF VTU Belagavi`;
 const DESCRIPTION =
-    'HackNova 2026 is a free 24-hour national level AI hackathon by Sphere Hive at IIT Tirupati (Aug 8 — 9, 2026). Compete on a data-centric AI challenge with 3LC.ai. ₹35,000 prize pool plus sponsored prizes.';
+    'Hack[AI]Thon 2.0 2026 is a free 24-hour national level AI hackathon by Sphere Hive at VRIF VTU Belagavi (Aug 8 — 9, 2026). Compete on a data-centric AI challenge with 3LC.ai. ₹35,000 prize pool plus sponsored prizes.';
 
 export const viewport: Viewport = {
     themeColor: SITE.themeColor,
@@ -29,20 +30,20 @@ export const metadata: Metadata = {
     metadataBase: new URL(SITE.url),
     title: {
         default: TITLE,
-        template: '%s · HackNova 2026',
+        template: '%s · Hack[AI]Thon 2.0 2026',
     },
     description: DESCRIPTION,
     applicationName: SITE.name,
     generator: 'Next.js',
     referrer: 'origin-when-cross-origin',
     keywords: [
-        'HackNova',
-        'HackNova 2026',
+        'Hack[AI]Thon 2.0',
+        'Hack[AI]Thon 2.0 2026',
         'AI hackathon',
         'AI hackathon India',
         'national hackathon 2026',
-        'national level hackathon Andhra Pradesh',
-        'IIT Tirupati hackathon',
+        'national level hackathon Karnataka',
+        'VRIF VTU Belagavi hackathon',
         'data centric AI hackathon',
         '3LC.ai hackathon',
         'Sphere Hive',
@@ -50,7 +51,7 @@ export const metadata: Metadata = {
         '24 hour hackathon',
         'student hackathon India 2026',
         'machine learning competition India',
-        'tech fest Andhra Pradesh 2026',
+        'tech fest Karnataka 2026',
         'free hackathon',
     ],
     authors: [{ name: SITE.organisation.name, url: SITE.url }],
@@ -74,7 +75,7 @@ export const metadata: Metadata = {
                 url: absoluteUrl('/api/og'),
                 width: 1200,
                 height: 630,
-                alt: 'HackNova 2026 — National AI Hackathon',
+                alt: 'Hack[AI]Thon 2.0 2026 — National AI Hackathon',
             },
         ],
         locale: 'en_IN',
@@ -134,16 +135,16 @@ export default function RootLayout({
                 {/* Pre-connect to assets we will reach for fast */}
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link
-                    rel="preconnect"
-                    href="https://fonts.gstatic.com"
-                    crossOrigin="anonymous"
+                     rel="preconnect"
+                     href="https://fonts.gstatic.com"
+                     crossOrigin="anonymous"
                 />
                 {/* RSS-style discovery for the manifesto (helps content surfaces) */}
                 <link
                     rel="alternate"
                     type="text/html"
                     href={absoluteUrl('/manifesto')}
-                    title="HackNova Manifesto"
+                    title="Hack[AI]Thon 2.0 Manifesto"
                 />
             </head>
             <body className="min-h-screen bg-space-black text-white font-sans selection:bg-space-purple selection:text-white relative flex flex-col">
@@ -155,23 +156,25 @@ export default function RootLayout({
                 {/* First-paint intro splash (2.5s editorial counter) */}
                 <IntroSplash />
 
-                {/* Ambient cosmic backdrop */}
-                <StarField />
+                {/* Cinematic samurai backdrop — scroll-scrubbed video + embers */}
+                <CinematicBackground />
 
                 {/* Top-of-page scroll progress bar */}
                 <ScrollProgress />
 
                 {/* Side rails */}
                 <div className="fixed bottom-10 left-10 [writing-mode:vertical-rl] rotate-180 text-[10px] font-mono tracking-[0.4em] uppercase text-white/25 z-40 pointer-events-none hidden lg:block">
-                    Coded · in · the · cosmos
+                    鍛冶場 · Samurai · Code
                 </div>
                 <div className="fixed bottom-10 right-10 [writing-mode:vertical-rl] text-[10px] font-mono tracking-[0.4em] uppercase text-white/25 z-40 pointer-events-none hidden lg:block">
-                    Navigate · the · stars
+                    Hack[AI]Thon · 2.0
                 </div>
 
-                <Navbar />
-                <main className="flex-grow relative z-10">{children}</main>
-                <Footer />
+                <SmoothScroll>
+                    <Navbar />
+                    <main className="flex-grow relative z-10">{children}</main>
+                    <Footer />
+                </SmoothScroll>
 
                 <CommandPalette />
             </body>

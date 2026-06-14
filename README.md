@@ -1,10 +1,10 @@
 <div align="center">
   <img src="public/logo.png" width="100" />
-  <h1>HackNova | The Code of the Samurai</h1>
+  <h1>Hack[AI]Thon 2.0 | The Code of the Samurai</h1>
 </div>
 
 ## Overview
-**HackNova 2026** is the official landing page for the premium 24-hour National Level Artificial Intelligence hackathon organized by Sphere Hive at Joy University, Tamil Nadu.
+**Hack[AI]Thon 2.0 2026** is the official landing page for the premium 24-hour National Level Artificial Intelligence hackathon organized by Sphere Hive at VRIF VTU Belagavi, Karnataka.
 
 This responsive, premium SPA (Single Page Application) serves as the primary informational hub for participants, providing details on:
 - 🗓️ Event Timelines & Scheduling

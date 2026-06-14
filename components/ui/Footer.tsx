@@ -40,7 +40,7 @@ export default function Footer() {
         className="absolute top-[-30%] left-1/2 -translate-x-1/2 w-[80%] h-[400px] blur-[120px] opacity-30 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse, rgba(139,92,246,0.25) 0%, transparent 60%)",
+            "radial-gradient(ellipse, rgba(220,38,38,0.25) 0%, transparent 60%)",
         }}
       />
 
@@ -57,16 +57,16 @@ export default function Footer() {
                 <span className="absolute inset-0 rounded-full bg-space-purple/40 blur-md" />
                 <img
                   src="/logo.png"
-                  alt="HackNova"
+                  alt="Hack[AI]Thon 2.0"
                   className="relative h-8 w-8 object-contain"
                 />
               </span>
-              HACKNOVA
+              HACK[AI]THON 2.0
             </Link>
 
             <p className="text-sm text-ink-dim font-light leading-relaxed max-w-md mb-6">
               A national-level 24-hour AI hackathon presented by Sphere Hive at
-              IIT Tirupati. Build the future with the best minds in the country.
+              VRIF VTU Belagavi. Build the future with the best minds in the country.
             </p>
 
             {/* Socials */}
@@ -140,14 +140,14 @@ export default function Footer() {
         {/* Watermark */}
         <div className="relative overflow-hidden mb-8">
           <div className="font-display font-black text-center leading-[0.85] tracking-[-0.05em] uppercase text-[18vw] md:text-[15vw] text-stroke select-none pointer-events-none">
-            HACKNOVA
+            HACK[AI]THON 2.0
           </div>
         </div>
 
         {/* Bottom bar */}
         <div className="pt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="font-mono text-[11px] tracking-[0.2em] text-ink-dim uppercase">
-            © {new Date().getFullYear()} HackNova · Coded in the cosmos
+            © {new Date().getFullYear()} Hack[AI]Thon 2.0 · Coded in the cosmos
           </div>
 
           <button

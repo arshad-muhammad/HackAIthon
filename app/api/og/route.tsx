@@ -25,11 +25,11 @@ export async function GET(req: NextRequest) {
   const headline = team
     ? isRegistered
       ? "I just registered."
-      : "We're going to HackNova."
+      : "We're going to Hack[AI]Thon 2.0."
     : "A national AI hackathon.";
   const subhead = team
     ? team.toUpperCase()
-    : "HACKNOVA · 2026";
+    : "HACK[AI]THON 2.0 · 2026";
 
   return new ImageResponse(
     (
@@ -41,7 +41,7 @@ export async function GET(req: NextRequest) {
           flexDirection: "column",
           padding: "60px 72px",
           background:
-            "radial-gradient(circle at 25% 20%, rgba(139,92,246,0.32) 0%, transparent 55%), radial-gradient(circle at 80% 90%, rgba(103,232,249,0.22) 0%, transparent 55%), #050310",
+            "radial-gradient(circle at 25% 20%, rgba(220,38,38,0.32) 0%, transparent 55%), radial-gradient(circle at 80% 90%, rgba(251,146,60,0.22) 0%, transparent 55%), #050310",
           color: "white",
           fontFamily: "system-ui, -apple-system, sans-serif",
           position: "relative",
@@ -61,8 +61,8 @@ export async function GET(req: NextRequest) {
             paddingTop: 22,
           }}
         >
-          <span>HackNova · 2026</span>
-          <span>Aug 08 - 09 · IIT Tirupati</span>
+          <span>Hack[AI]Thon 2.0 · 2026</span>
+          <span>Aug 08 - 09 · VRIF VTU Belagavi</span>
         </div>
 
         {/* Centered block */}
@@ -83,7 +83,7 @@ export async function GET(req: NextRequest) {
                 fontSize: 22,
                 letterSpacing: 5,
                 textTransform: "uppercase",
-                color: "rgba(192,132,252,0.95)",
+                color: "rgba(248,113,113,0.95)",
                 marginBottom: 24,
               }}
             >
@@ -92,8 +92,8 @@ export async function GET(req: NextRequest) {
                   width: 10,
                   height: 10,
                   borderRadius: 999,
-                  background: "#C084FC",
-                  boxShadow: "0 0 20px rgba(192,132,252,0.8)",
+                  background: "#f87171",
+                  boxShadow: "0 0 20px rgba(248,113,113,0.8)",
                 }}
               />
               {isRegistered ? "Confirmed · Team" : "Team"}
@@ -147,7 +147,7 @@ export async function GET(req: NextRequest) {
             paddingTop: 22,
           }}
         >
-          <span>hacknova.in</span>
+          <span>hack-ai-thon.spherehive.in</span>
           <span>by Sphere Hive</span>
         </div>
       </div>

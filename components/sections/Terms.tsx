@@ -14,11 +14,11 @@ export default function Terms() {
                 </h1>
                 <div className="prose prose-invert prose-violet max-w-none font-light leading-relaxed space-y-6">
                     <p>
-                        By accessing this website and registering for HackNova, you are agreeing to be bound by these website Terms and Conditions of Use, applicable laws and regulations, and their compliance. If you disagree with any of the stated terms and conditions, you are prohibited from using or accessing this site.
+                        By accessing this website and registering for Hack[AI]Thon 2.0, you are agreeing to be bound by these website Terms and Conditions of Use, applicable laws and regulations, and their compliance. If you disagree with any of the stated terms and conditions, you are prohibited from using or accessing this site.
                     </p>
                     <h2 className="text-2xl font-bold mt-8 mb-4 text-white uppercase tracking-wider">Use License</h2>
                     <p>
-                        Permission is granted to temporarily download one copy of the materials (information or software) on HackNova's site for personal, non-commercial transitory viewing only. All code written during the event belongs to the creators, though sponsors may have specific rules regarding their designated bounty prizes.
+                        Permission is granted to temporarily download one copy of the materials (information or software) on Hack[AI]Thon 2.0's site for personal, non-commercial transitory viewing only. All code written during the event belongs to the creators, though sponsors may have specific rules regarding their designated bounty prizes.
                     </p>
                     <h2 className="text-2xl font-bold mt-8 mb-4 text-white uppercase tracking-wider">Event Participation</h2>
                     <p>
@@ -26,7 +26,7 @@ export default function Terms() {
                     </p>
                     <h2 className="text-2xl font-bold mt-8 mb-4 text-white uppercase tracking-wider">Limitations</h2>
                     <p>
-                        In no event shall HackNova or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on HackNova's Internet site.
+                        In no event shall Hack[AI]Thon 2.0 or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on Hack[AI]Thon 2.0's Internet site.
                     </p>
                 </div>
             </motion.div>

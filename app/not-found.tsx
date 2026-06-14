@@ -30,7 +30,7 @@ export default function NotFound() {
           >
             ← Return to base
           </Link>
-          <span>HackNova · Sphere Hive</span>
+          <span>Hack[AI]Thon 2.0 · Sphere Hive</span>
         </div>
       </div>
     </div>

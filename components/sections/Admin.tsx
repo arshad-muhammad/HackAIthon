@@ -140,14 +140,14 @@ export default function Admin() {
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = `hacknova_registrations_${new Date().toISOString().split('T')[0]}.csv`;
+        a.download = `hack_ai_thon_registrations_${new Date().toISOString().split('T')[0]}.csv`;
         a.click();
     };
 
     if (!isAuthenticated) {
         return (
             <div className="min-h-screen pt-32 pb-20 px-4 flex items-center justify-center relative overflow-hidden">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#8B5CF6]/5 rounded-full blur-[100px] pointer-events-none" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#dc2626]/5 rounded-full blur-[100px] pointer-events-none" />
 
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -155,7 +155,7 @@ export default function Admin() {
                     className="max-w-md w-full bg-black/40 backdrop-blur-md p-8 rounded-2xl border border-white/10 relative z-10"
                 >
                     <div className="flex justify-center mb-6">
-                        <Shield className="w-16 h-16 text-[#8B5CF6]" />
+                        <Shield className="w-16 h-16 text-[#dc2626]" />
                     </div>
                     <h1 className="text-3xl font-orbitron text-center mb-8 tracking-wider">COMMAND CENTER</h1>
 
@@ -168,7 +168,7 @@ export default function Admin() {
                                     type="password"
                                     value={key}
                                     onChange={(e) => setKey(e.target.value)}
-                                    className="w-full bg-white/5 border border-white/10 rounded-lg pl-11 pr-4 py-3 text-white focus:outline-none focus:border-[#8B5CF6] transition-colors tracking-widest font-mono"
+                                    className="w-full bg-white/5 border border-white/10 rounded-lg pl-11 pr-4 py-3 text-white focus:outline-none focus:border-[#dc2626] transition-colors tracking-widest font-mono"
                                     placeholder="Enter Key"
                                     autoComplete="off"
                                 />
@@ -179,7 +179,7 @@ export default function Admin() {
 
                         <button
                             type="submit"
-                            className="w-full bg-[#8B5CF6] hover:bg-[#7C3AED] text-black font-bold font-orbitron py-3 rounded-lg transition-colors tracking-wider"
+                            className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-black font-bold font-orbitron py-3 rounded-lg transition-colors tracking-wider"
                         >
                             AUTHENTICATE
                         </button>
@@ -202,18 +202,18 @@ export default function Admin() {
                         title="Refresh Data"
                         className="p-3 bg-white/5 hover:bg-white/10 rounded-lg border border-white/10 transition-colors"
                     >
-                        <RefreshCw className={`w-5 h-5 ${isLoading ? 'animate-spin text-[#8B5CF6]' : 'text-gray-300'}`} />
+                        <RefreshCw className={`w-5 h-5 ${isLoading ? 'animate-spin text-[#dc2626]' : 'text-gray-300'}`} />
                     </button>
                     <button
                         onClick={handleDownloadCSV}
-                        className="flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 rounded-lg border border-white/10 transition-colors font-rajdhani hover:text-[#8B5CF6]"
+                        className="flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 rounded-lg border border-white/10 transition-colors font-rajdhani hover:text-[#dc2626]"
                     >
                         <Download className="w-5 h-5" />
                         <span>EXPORT CSV</span>
                     </button>
                     <button
                         onClick={() => setIsAuthenticated(false)}
-                        className="px-6 py-3 bg-[#8B5CF6]/10 hover:bg-[#8B5CF6] hover:text-white text-[#8B5CF6] rounded-lg border border-[#8B5CF6]/30 transition-colors font-rajdhani font-bold"
+                        className="px-6 py-3 bg-[#dc2626]/10 hover:bg-[#dc2626] hover:text-white text-[#dc2626] rounded-lg border border-[#dc2626]/30 transition-colors font-rajdhani font-bold"
                     >
                         LOGOUT
                     </button>
@@ -221,17 +221,17 @@ export default function Admin() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                <div className="bg-black/40 border border-white/10 rounded-xl p-6 flex flex-col items-center justify-center text-center group hover:border-[#8B5CF6]/30 transition-colors">
-                    <Users className="w-8 h-8 text-[#8B5CF6] mb-4 group-hover:scale-110 transition-transform" />
+                <div className="bg-black/40 border border-white/10 rounded-xl p-6 flex flex-col items-center justify-center text-center group hover:border-[#dc2626]/30 transition-colors">
+                    <Users className="w-8 h-8 text-[#dc2626] mb-4 group-hover:scale-110 transition-transform" />
                     <h3 className="text-gray-400 font-rajdhani text-sm uppercase tracking-widest mb-1">Total Teams</h3>
                     <p className="text-4xl font-orbitron text-white">{stats.teams}</p>
                 </div>
-                <div className="bg-black/40 border border-white/10 rounded-xl p-6 flex flex-col items-center justify-center text-center group hover:border-[#8B5CF6]/30 transition-colors">
-                    <BarChart3 className="w-8 h-8 text-[#8B5CF6] mb-4 group-hover:scale-110 transition-transform" />
+                <div className="bg-black/40 border border-white/10 rounded-xl p-6 flex flex-col items-center justify-center text-center group hover:border-[#dc2626]/30 transition-colors">
+                    <BarChart3 className="w-8 h-8 text-[#dc2626] mb-4 group-hover:scale-110 transition-transform" />
                     <h3 className="text-gray-400 font-rajdhani text-sm uppercase tracking-widest mb-1">Total Web Views</h3>
                     <p className="text-4xl font-orbitron text-white">{stats.visitors}</p>
                 </div>
-                <div className="bg-black/40 border border-white/10 rounded-xl p-6 flex flex-col items-center justify-center text-center group hover:border-[#8B5CF6]/30 transition-colors">
+                <div className="bg-black/40 border border-white/10 rounded-xl p-6 flex flex-col items-center justify-center text-center group hover:border-[#dc2626]/30 transition-colors">
                     <Settings className="w-8 h-8 text-space-nebula mb-4 group-hover:scale-110 transition-transform" />
                     <h3 className="text-gray-400 font-rajdhani text-sm uppercase tracking-widest mb-1">System Status</h3>
                     <p className="text-xl mt-2 font-orbitron text-green-400 drop-shadow-[0_0_8px_rgba(74,222,128,0.8)]">ONLINE</p>
@@ -310,7 +310,7 @@ export default function Admin() {
                                         type="text"
                                         value={editingRegistration.team_name}
                                         onChange={(e) => handleEditChange('team_name', e.target.value)}
-                                        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#8B5CF6] font-rajdhani"
+                                        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#dc2626] font-rajdhani"
                                     />
                                 </div>
                                 <div>
@@ -319,7 +319,7 @@ export default function Admin() {
                                         required
                                         value={editingRegistration.member_count}
                                         onChange={(e) => handleEditChange('member_count', parseInt(e.target.value))}
-                                        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#8B5CF6] font-rajdhani appearance-none"
+                                        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#dc2626] font-rajdhani appearance-none"
                                     >
                                         <option value={2}>2 Members</option>
                                         <option value={3}>3 Members</option>
@@ -332,7 +332,7 @@ export default function Admin() {
                                 <h3 className="text-xl font-orbitron text-gray-300 border-b border-white/10 pb-2">CREW MEMBERS</h3>
                                 {editingRegistration.membersList.slice(0, editingRegistration.member_count).map((member: any, idx: number) => (
                                     <div key={idx} className="bg-white/5 border border-white/10 p-5 rounded-xl space-y-4">
-                                        <h4 className="font-orbitron text-sm text-[#8B5CF6]">CREW MEMBER {idx + 1}</h4>
+                                        <h4 className="font-orbitron text-sm text-[#dc2626]">CREW MEMBER {idx + 1}</h4>
                                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                                             <input required type="text" value={member.name} onChange={(e) => handleEditMemberChange(idx, 'name', e.target.value)} placeholder="Name" className="w-full bg-black border border-white/10 rounded-lg px-4 py-2 text-white" />
                                             <input required type="email" value={member.email} onChange={(e) => handleEditMemberChange(idx, 'email', e.target.value)} placeholder="Email" className="w-full bg-black border border-white/10 rounded-lg px-4 py-2 text-white" />
@@ -365,7 +365,7 @@ export default function Admin() {
                                 <button type="button" onClick={() => setEditingRegistration(null)} className="px-6 py-3 font-rajdhani border border-white/20 rounded-lg hover:bg-white/5 transition-colors">
                                     CANCEL
                                 </button>
-                                <button type="submit" disabled={isSaving} className="px-6 py-3 font-rajdhani bg-[#8B5CF6] hover:bg-[#7C3AED] text-white font-bold rounded-lg transition-colors flex items-center gap-2">
+                                <button type="submit" disabled={isSaving} className="px-6 py-3 font-rajdhani bg-[#dc2626] hover:bg-[#b91c1c] text-white font-bold rounded-lg transition-colors flex items-center gap-2">
                                     <Save className="w-4 h-4" />
                                     {isSaving ? 'SAVING...' : 'SAVE CHANGES'}
                                 </button>

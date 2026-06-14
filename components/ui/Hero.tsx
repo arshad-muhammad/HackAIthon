@@ -5,7 +5,7 @@ import { ChevronRight } from "lucide-react";
 import { useRef } from "react";
 
 /**
- * Cinematic hero - the astronaut footage is the centerpiece.
+ * Cinematic hero – transparent section over the global CinematicBackground.
  * Composition is intentionally quiet: tiny brand line up top,
  * a single bold title block in the lower third (film-poster style),
  * one tagline, one info row, two buttons. Nothing else competes.
@@ -19,11 +19,9 @@ export default function Hero() {
     offset: ["start start", "end start"],
   });
 
-  // Gentle, long parallax - matches the floating motion of the footage.
+  // Gentle, long parallax for the content block.
   const contentY = useTransform(scrollYProgress, [0, 1], [0, -80]);
   const fadeOut = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
-  const videoY = useTransform(scrollYProgress, [0, 1], [0, 60]);
-  const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.06]);
 
   return (
     <section
@@ -31,33 +29,6 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen w-full overflow-hidden"
     >
-      {/* ============== VIDEO LAYER ============== */}
-      <motion.div
-        style={reduce ? undefined : { y: videoY, scale: videoScale }}
-        className="absolute inset-0 z-0 bg-space-black"
-      >
-        {/*
-          Full-bleed at every viewport. The clip is 16:9 so on a tall phone
-          something must crop — we anchor to top-center on small screens so
-          the astronaut sits in the upper half (above the title block) and
-          shift the focal point lower as the viewport widens.
-        */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover object-[center_top] sm:object-[center_25%] md:object-[center_30%] opacity-75 mix-blend-screen pointer-events-none"
-        >
-          <source src="/hero-bg.mp4" type="video/mp4" />
-        </video>
-
-        {/* Heavy darken - protects text legibility, fades into the section */}
-        <div className="absolute inset-0 bg-gradient-to-b from-space-black/85 via-space-black/35 to-space-black" />
-      </motion.div>
-
       {/* ============== CONTENT ============== */}
       <motion.div
         style={reduce ? undefined : { opacity: fadeOut, y: contentY }}
@@ -75,7 +46,7 @@ export default function Hero() {
           </span>
         </motion.div>
 
-        {/* Spacer that lets the astronaut breathe */}
+        {/* Spacer that lets the background breathe */}
         <div className="flex-grow" />
 
         {/* Title block, lower-third - film poster cadence */}
@@ -83,20 +54,30 @@ export default function Hero() {
           {/* Screen-reader-only descriptive heading. The visible wordmark
               below is decorative; this is the keyword-rich semantic H1. */}
           <h1 className="sr-only">
-            HackNova 2026 - National AI Hackathon at IIT Tirupati · 24 hours · Aug 8 - 9, 2026
+            Hack[AI]Thon 2.0 2026 - National AI Hackathon at VRIF VTU Belagavi · 24 hours · Aug 8 - 9, 2026
           </h1>
           <motion.div
             aria-hidden="true"
             initial={{ opacity: 0, y: 14, filter: "blur(6px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0)" }}
             transition={{ duration: 1.6, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display font-black text-white tracking-[-0.04em] leading-[0.9] text-[64px] sm:text-[92px] md:text-[124px] lg:text-[148px]"
+            className="font-display font-black text-white tracking-[-0.04em] leading-[0.85] text-[52px] sm:text-[76px] md:text-[104px] lg:text-[120px]"
             style={{
               textShadow:
-                "0 2px 30px rgba(0,0,0,0.55), 0 0 60px rgba(0,0,0,0.35)",
+                "0 2px 30px rgba(220,38,38,0.3), 0 0 60px rgba(0,0,0,0.5)",
             }}
           >
-            HACKNOVA
+            <div className="flex items-center justify-center gap-1 sm:gap-2 select-none">
+              <span>HACK</span>
+              <img
+                src="/logo-transparent.png"
+                alt="AI Logo"
+                className="h-[1.05em] w-auto object-contain"
+                style={{ filter: "drop-shadow(0 2px 20px rgba(220,38,38,0.45))" }}
+              />
+              <span>THON</span>
+            </div>
+            <span className="text-gradient-purple">2.0</span>
           </motion.div>
 
           <motion.div
@@ -126,7 +107,7 @@ export default function Hero() {
             <span className="w-1 h-1 rounded-full bg-white/30" />
             <span>Aug 08–09 · 2026</span>
             <span className="w-1 h-1 rounded-full bg-white/30" />
-            <span>IIT Tirupati</span>
+            <span>VRIF VTU Belagavi</span>
           </motion.div>
 
           {/* CTAs */}

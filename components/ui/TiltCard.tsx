@@ -51,7 +51,7 @@ export default function TiltCard({
         <motion.div
           className="pointer-events-none absolute inset-0 rounded-[inherit] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
           style={{
-            background: `radial-gradient(400px circle at ${glareX} ${glareY}, rgba(192,132,252,0.18), transparent 50%)`,
+            background: `radial-gradient(400px circle at ${glareX} ${glareY}, rgba(220,38,38,0.18), transparent 50%)`,
           }}
         />
       )}

@@ -128,12 +128,12 @@ export default function Navbar() {
               <span className="absolute inset-0 rounded-full bg-space-purple/40 blur-md group-hover:blur-lg transition-all" />
               <img
                 src="/logo.png"
-                alt="HackNova"
+                alt="Hack[AI]Thon 2.0"
                 className="relative h-6 w-6 sm:h-7 sm:w-7 object-contain"
               />
             </span>
             <span className="text-[11px] sm:text-[13px] bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent truncate">
-              HACKNOVA
+              HACK[AI]THON 2.0
             </span>
           </Link>
 
@@ -168,7 +168,7 @@ export default function Navbar() {
                 {activeTab === item && (
                   <motion.span
                     layoutId="active-dot"
-                    className="absolute -bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-space-purple shadow-[0_0_8px_rgba(139,92,246,0.9)]"
+                    className="absolute -bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-space-purple shadow-[0_0_8px_rgba(220,38,38,0.9)]"
                   />
                 )}
               </button>

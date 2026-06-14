@@ -77,20 +77,25 @@ export default function IntroSplash() {
 
           {/* Top meta row */}
           <div className="absolute top-6 left-6 right-6 flex items-baseline justify-between font-mono text-[10px] tracking-[0.3em] uppercase text-white/55">
-            <span>HackNova · 2026</span>
+            <span>Hack[AI]Thon 2.0 · 2026</span>
             <span className="hidden sm:block">Aug 08 - 09</span>
           </div>
 
-          {/* Optional center wordmark - extremely quiet */}
+          {/* Optional center logo - pulsing with a red glow */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-              className="font-display font-black uppercase tracking-[-0.04em] text-[18vw] sm:text-[14vw] leading-none text-white/[0.04] select-none"
-            >
-              HACKNOVA
-            </motion.div>
+            <motion.img
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: [0.08, 0.16, 0.08], scale: [0.98, 1.02, 0.98] }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              src="/logo-transparent.png"
+              alt="Sphere Hive Logo"
+              className="w-24 h-24 sm:w-32 sm:h-32 object-contain select-none"
+              style={{ filter: "drop-shadow(0 0 30px rgba(220,38,38,0.5))" }}
+            />
           </div>
 
           {/* Bottom-left counter block */}
@@ -100,7 +105,7 @@ export default function IntroSplash() {
               <div className="flex items-baseline gap-3">
                 <span
                   ref={numRef}
-                  className="font-display font-black tabular-nums text-white tracking-[-0.04em] text-6xl sm:text-7xl md:text-8xl leading-none"
+                  className="font-display font-black tabular-nums text-white tracking-[-0.04em] text-6xl sm:text-7xl md:text-8xl leading-none text-glow"
                 >
                   000
                 </span>
@@ -113,7 +118,7 @@ export default function IntroSplash() {
               <div className="mt-5 h-px w-full bg-white/10 overflow-hidden">
                 <motion.div
                   style={{ width: barWidth }}
-                  className="h-full bg-white/85"
+                  className="h-full bg-gradient-to-r from-red-600 via-red-500 to-orange-500 shadow-[0_0_8px_rgba(220,38,38,0.8)]"
                 />
               </div>
 

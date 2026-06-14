@@ -7,16 +7,16 @@
  */
 
 export const SITE = {
-  name: "HackNova",
-  brand: "HackNova 2026",
+  name: "Hack[AI]Thon 2.0",
+  brand: "Hack[AI]Thon 2.0 2026",
   shortDescription:
-    "A 24-hour national AI hackathon by Sphere Hive at IIT Tirupati.",
+    "A 24-hour national AI hackathon by Sphere Hive at VRIF VTU Belagavi.",
   longDescription:
-    "HackNova 2026 is a 24-hour national level Artificial Intelligence hackathon hosted by Sphere Hive at IIT Tirupati. Teams compete on a single data-centric AI challenge powered by 3LC.ai - improving model accuracy by improving the dataset itself.",
+    "Hack[AI]Thon 2.0 2026 is a 24-hour national level Artificial Intelligence hackathon hosted by Sphere Hive at VRIF VTU Belagavi. Teams compete on a single data-centric AI challenge powered by 3LC.ai - improving model accuracy by improving the dataset itself.",
   // The canonical, public, production URL. Override in env if you change domains.
   url:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-    "https://hacknova.in",
+    "https://hack-ai-thon.spherehive.in",
   locale: "en_IN",
   themeColor: "#030207",
 
@@ -31,17 +31,17 @@ export const SITE = {
   },
 
   event: {
-    name: "HackNova 2026",
+    name: "Hack[AI]Thon 2.0 2026",
     startDate: "2026-08-08T09:00:00+05:30",
     endDate: "2026-08-09T13:00:00+05:30",
     eventStatus: "https://schema.org/EventScheduled",
     attendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     venue: {
-      name: "IIT Tirupati",
-      streetAddress: "IIT Tirupati, Yerpedu-Venkatagiri Road, Settipalli",
-      addressLocality: "Tirupati",
-      addressRegion: "Andhra Pradesh",
-      postalCode: "517619",
+      name: "VRIF VTU Belagavi",
+      streetAddress: "VRIF VTU Belagavi, Visvesvaraya Technological University, Belagavi",
+      addressLocality: "Belagavi",
+      addressRegion: "Karnataka",
+      postalCode: "590018",
       addressCountry: "IN",
     },
     registerUrl:
@@ -50,12 +50,12 @@ export const SITE = {
     keywords: [
       "AI Hackathon",
       "National Hackathon 2026",
-      "IIT Tirupati Hackathon",
-      "Andhra Pradesh tech fest 2026",
+      "VRIF VTU Belagavi Hackathon",
+      "Karnataka tech fest 2026",
       "Data-centric AI competition",
       "Student AI hackathon India",
       "24 hour hackathon",
-      "Sphere Hive HackNova",
+      "Sphere Hive Hack[AI]Thon 2.0",
     ],
   },
 

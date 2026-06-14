@@ -55,7 +55,7 @@ export default function Countdown({ compact = false, className = "" }: Props) {
     <div
       className={`inline-grid grid-cols-4 gap-1.5 sm:gap-3 ${className}`}
       role="timer"
-      aria-label="Countdown to HackNova 2026"
+      aria-label="Countdown to Hack[AI]Thon 2.0 2026"
     >
       {items.map(([label, val], i) => (
         <div

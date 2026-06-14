@@ -8,8 +8,8 @@ import { SITE } from '@/lib/site';
  */
 export default function manifest(): MetadataRoute.Manifest {
     return {
-        name: 'HackNova 2026 — National AI Hackathon',
-        short_name: 'HackNova',
+        name: 'Hack[AI]Thon 2.0 2026 — National AI Hackathon',
+        short_name: 'Hack[AI]Thon 2.0',
         description: SITE.shortDescription,
         start_url: '/',
         display: 'standalone',

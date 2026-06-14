@@ -5,7 +5,7 @@ import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 export const metadata: Metadata = {
     title: 'Privacy Policy',
     description:
-        'How HackNova 2026 collects, uses, and protects your information when you register or visit the site.',
+        'How Hack[AI]Thon 2.0 2026 collects, uses, and protects your information when you register or visit the site.',
     alternates: { canonical: '/privacy' },
 };
 
