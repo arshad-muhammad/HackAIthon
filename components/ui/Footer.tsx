@@ -46,9 +46,9 @@ export default function Footer() {
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Massive watermark + grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 mb-16">
           {/* Brand block */}
-          <div className="lg:col-span-5">
+          <div className="md:col-span-2 lg:col-span-5">
             <Link
               href="/"
               className="inline-flex items-center gap-2.5 text-white font-display font-black text-base tracking-[2px] mb-5"
@@ -89,7 +89,7 @@ export default function Footer() {
           </div>
 
           {/* Link columns */}
-          <div className="lg:col-span-4 grid grid-cols-2 gap-6">
+          <div className="md:col-span-1 lg:col-span-4 grid grid-cols-2 gap-6">
             {Object.entries(links).map(([title, items]) => (
               <div key={title}>
                 <div className="text-space-purple font-mono text-[10px] uppercase tracking-[0.3em] font-bold mb-4">
@@ -112,7 +112,7 @@ export default function Footer() {
           </div>
 
           {/* Contact / CTA */}
-          <div className="lg:col-span-3">
+          <div className="md:col-span-1 lg:col-span-3">
             <div className="text-space-purple font-mono text-[10px] uppercase tracking-[0.3em] font-bold mb-4">
               Contact
             </div>
