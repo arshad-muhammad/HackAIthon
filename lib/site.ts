@@ -45,7 +45,7 @@ export const SITE = {
       addressCountry: "IN",
     },
     registerUrl:
-      "https://unstop.com/p/hacknova-sphere-hive-kvg-college-of-engineering-sullia-1693176",
+      "https://unstop.com/p/hackaithon-20-sphere-hive-kvg-college-of-engineering-sullia-1699309",
     prizePool: "INR 35,000",
     keywords: [
       "AI Hackathon",
