@@ -50,7 +50,7 @@ export default function CTA() {
             </div>
 
             <MagneticButton
-              href="https://unstop.com/p/hacknova-sphere-hive-kvg-college-of-engineering-sullia-1693176"
+              href="https://unstop.com/p/hackaithon-20-sphere-hive-kvg-college-of-engineering-sullia-1699309"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary group inline-flex w-full sm:w-auto text-center px-6 sm:px-10 h-12 sm:h-auto sm:py-4 text-[11px] sm:text-[12px] font-bold uppercase tracking-[0.18em] sm:tracking-[0.2em] justify-center"
