@@ -16,7 +16,7 @@ gsap.registerPlugin(ScrollTrigger);
  */
 
 const TOTAL_FRAMES = 540;
-const getFramePath = (index: number) => `/frames/frame_${index.toString().padStart(4, "0")}.jpg`;
+const getFramePath = (index: number) => `https://res.cloudinary.com/dimxynois/image/upload/f_auto,q_auto/hackaithon-bg-frames/frame_${index.toString().padStart(4, "0")}.jpg`;
 
 // Ember particle type
 type Ember = {
@@ -60,6 +60,7 @@ export default function CinematicBackground() {
     if (images.length === 0) {
       // 1. Load the first frame immediately
       const firstImg = new Image();
+      firstImg.crossOrigin = "anonymous";
       firstImg.src = getFramePath(1);
       firstImg.onload = () => {
         images[1] = firstImg;
@@ -68,6 +69,7 @@ export default function CinematicBackground() {
       // 2. Load remaining frames sequentially
       for (let i = 2; i <= TOTAL_FRAMES; i++) {
         const img = new Image();
+        img.crossOrigin = "anonymous";
         img.src = getFramePath(i);
         img.onload = () => {
           images[i] = img;
