@@ -5,9 +5,36 @@ import { ArrowUpRight, Mail } from "lucide-react";
 import TiltCard from "./TiltCard";
 
 const sponsors = [
-  { name: "3LC.ai", tier: "Title Sponsor", logo: "/sponsors/3lc_ai_logo.jpg", url: "https://3lc.ai" },
-  { name: "Unstop", tier: "Powered By", logo: "/sponsors/unstop-logo.png", url: "https://unstop.com" },
-  { name: "Gen.xyz", tier: "Domain Sponsor", logo: "/sponsors/xyz-logo-color.png", url: "https://gen.xyz" },
+  {
+    name: "KVGCE",
+    tier: "Sphere Hive Hub",
+    logo: "/sponsors/kvgce-logo.jpg",
+    url: "https://kvgengg.com",
+  },
+  {
+    name: "Visvesvaraya Research & Innovation Foundation, VTU Belagavi",
+    tier: "Collaborator",
+    logo: "/sponsors/VRIF-LOGO.png",
+    url: "https://vtuvrif.org",
+  },
+  {
+    name: "3LC.ai",
+    tier: "Title Sponsor",
+    logo: "/sponsors/3lc_ai_logo.jpg",
+    url: "https://3lc.ai",
+  },
+  {
+    name: "Unstop",
+    tier: "Powered By",
+    logo: "/sponsors/unstop-logo.png",
+    url: "https://unstop.com",
+  },
+  {
+    name: "Gen.xyz",
+    tier: "Domain Sponsor",
+    logo: "/sponsors/xyz-logo-color.png",
+    url: "https://gen.xyz",
+  },
 ];
 
 const marqueeWords = [
@@ -55,7 +82,8 @@ export default function Sponsors() {
               transition={{ delay: 0.2 }}
               className="text-sm md:text-base text-ink-dim max-w-2xl mx-auto font-light"
             >
-              Standing alongside the brands powering the next generation of AI builders.
+              Standing alongside the brands powering the next generation of AI
+              builders.
             </motion.p>
           </div>
 
@@ -135,7 +163,8 @@ export default function Sponsors() {
                 Want your logo on this stage?
               </h3>
               <p className="text-[13px] text-ink-dim font-light max-w-md">
-                Partner with Hack[AI]Thon 2.0 2026 and reach 200+ top engineering minds nationwide.
+                Partner with Hack[AI]Thon 2.0 2026 and reach 200+ top
+                engineering minds nationwide.
               </p>
             </div>
             <a

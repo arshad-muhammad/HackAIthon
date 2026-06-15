@@ -10,9 +10,9 @@ export const SITE = {
   name: "Hack[AI]Thon 2.0",
   brand: "Hack[AI]Thon 2.0 2026",
   shortDescription:
-    "A 24-hour national AI hackathon by Sphere Hive at VRIF VTU Belagavi.",
+    "A two-round national AI hackathon by Sphere Hive: Round 1 Online and Round 2 Offline at VRIF VTU Belagavi.",
   longDescription:
-    "Hack[AI]Thon 2.0 2026 is a 24-hour national level Artificial Intelligence hackathon hosted by Sphere Hive at VRIF VTU Belagavi. Teams compete on a single data-centric AI challenge powered by 3LC.ai - improving model accuracy by improving the dataset itself.",
+    "Hack[AI]Thon 2.0 2026 is a national-level AI hackathon by Sphere Hive. Round 1 (Online Screening): June 15 – July 25, 2026, focuses on data quality and debugging. Round 2 (Offline Finals): August 8 – 9, 2026, at VRIF VTU Belagavi, challenges the top 16 teams to retrain models using 3LC.ai.",
   // The canonical, public, production URL. Override in env if you change domains.
   url:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
@@ -27,7 +27,7 @@ export const SITE = {
     parent: "KVG College of Engineering, Sullia",
     email: "spherehive@kvgce.ac.in",
     instagram: "https://www.instagram.com/spherehive",
-    whatsapp: "https://chat.whatsapp.com/IhdbBT7OKAd1LHpYy9XBkc",
+    whatsapp: "https://chat.whatsapp.com/EfZ0JvCYzBR6jxjjx52flO?s=cl&p=a&mlu=1",
   },
 
   event: {
@@ -38,7 +38,8 @@ export const SITE = {
     attendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     venue: {
       name: "VRIF VTU Belagavi",
-      streetAddress: "VRIF VTU Belagavi, Visvesvaraya Technological University, Belagavi",
+      streetAddress:
+        "VRIF VTU Belagavi, Visvesvaraya Technological University, Belagavi",
       addressLocality: "Belagavi",
       addressRegion: "Karnataka",
       postalCode: "590018",

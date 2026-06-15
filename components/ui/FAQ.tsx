@@ -19,7 +19,10 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="min-h-[80vh] flex items-center justify-end py-28 md:py-36 relative">
+    <section
+      id="faq"
+      className="min-h-[80vh] flex items-center justify-end py-28 md:py-36 relative"
+    >
       <div className="container mx-auto px-6">
         <div className="cinematic-panel cinematic-panel-right max-w-4xl p-8 md:p-10 ml-auto">
           <motion.div
@@ -49,7 +52,11 @@ export default function FAQ() {
                   initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-8% 0px" }}
-                  transition={{ duration: 0.5, delay: i * 0.04, ease: [0.16, 1, 0.3, 1] as const }}
+                  transition={{
+                    duration: 0.5,
+                    delay: i * 0.04,
+                    ease: [0.16, 1, 0.3, 1] as const,
+                  }}
                   className="border-b border-white/10"
                 >
                   <button
@@ -66,7 +73,10 @@ export default function FAQ() {
                     <span className="col-span-1 flex justify-end text-white/45">
                       <motion.span
                         animate={{ rotate: isOpen ? 45 : 0 }}
-                        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] as const }}
+                        transition={{
+                          duration: 0.3,
+                          ease: [0.16, 1, 0.3, 1] as const,
+                        }}
                         className="inline-flex"
                       >
                         <Plus className="w-4 h-4" />
@@ -81,7 +91,10 @@ export default function FAQ() {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] as const }}
+                        transition={{
+                          duration: 0.32,
+                          ease: [0.16, 1, 0.3, 1] as const,
+                        }}
                         className="overflow-hidden"
                       >
                         <div className="grid grid-cols-12 gap-3 sm:gap-6 pb-6">
@@ -98,7 +111,10 @@ export default function FAQ() {
             })}
           </ul>
 
-          <motion.div {...fade} className="mt-10 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-3 font-mono text-[11px] tracking-[0.22em] uppercase text-white/45">
+          <motion.div
+            {...fade}
+            className="mt-10 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-3 font-mono text-[11px] tracking-[0.22em] uppercase text-white/45"
+          >
             <span>
               Still curious?{" "}
               <a
@@ -109,7 +125,7 @@ export default function FAQ() {
               </a>
             </span>
             <a
-              href="https://chat.whatsapp.com/IhdbBT7OKAd1LHpYy9XBkc"
+              href="https://chat.whatsapp.com/EfZ0JvCYzBR6jxjjx52flO?s=cl&p=a&mlu=1"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-white/85 hover:text-white transition-colors"
