@@ -130,7 +130,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-IN" dir="ltr">
+    <html lang="en" dir="ltr" suppressHydrationWarning>
       <head>
         {/* Pre-connect to assets we will reach for fast */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
