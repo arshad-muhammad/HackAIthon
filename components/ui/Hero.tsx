@@ -44,10 +44,15 @@ export default function Hero() {
           initial={{ opacity: 0, y: -6 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.4, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="pt-32 sm:pt-36 flex justify-center"
+          className="pt-32 sm:pt-36 flex justify-center px-4"
         >
-          <span className="font-mono text-[10px] tracking-[0.5em] uppercase text-white/45">
-            KVGCE, Sphere Hive X VRIF VTU Belagavi · Presents
+          <span className="font-mono text-[7px] sm:text-[9px] md:text-[10px] tracking-[0.12em] sm:tracking-[0.3em] md:tracking-[0.5em] uppercase text-white/45 text-center max-w-full flex flex-col sm:flex-row items-center justify-center gap-y-1.5 sm:gap-x-2 md:gap-x-4">
+            <span className="whitespace-nowrap">KVGCE, Sphere Hive</span>
+            <span className="text-[6px] sm:text-[8px] opacity-60 hidden sm:inline">X</span>
+            <span className="text-[6px] block sm:hidden font-light opacity-40">in collaboration with</span>
+            <span className="whitespace-nowrap">VRIF VTU Belagavi</span>
+            <span className="opacity-50 hidden sm:inline">·</span>
+            <span className="whitespace-nowrap text-white/70">Presents</span>
           </span>
         </motion.div>
 
@@ -105,7 +110,7 @@ export default function Hero() {
           </motion.p>
 
           {/* Info row - single line of facts, no chips, no badges */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2, delay: 1.3 }}
@@ -114,7 +119,7 @@ export default function Hero() {
             <span>Round 1: Online (Jun 15 – Jul 25)</span>
             <span className="hidden md:inline w-1 h-1 rounded-full bg-white/30" />
             <span>Round 2: Offline Finals (Aug 08 – 09 @ VRIF VTU)</span>
-          </motion.div>
+          </motion.div> */}
 
           {/* CTAs */}
           <motion.div
