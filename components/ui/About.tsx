@@ -3,10 +3,10 @@
 import { motion } from "motion/react";
 
 const facts: [string, string][] = [
-  ["Date", "August 8 - 9, 2026"],
-  ["Duration", "24 Hours, non-stop"],
-  ["Venue", "VRIF VTU Belagavi, Karnataka"],
-  ["Open To", "Students, nationwide"],
+  ["Round 1 (Online)", "June 15 — July 25, 2026"],
+  ["Round 2 (Offline)", "August 8 — 9, 2026"],
+  ["Venue (Round 2)", "VRIF VTU Belagavi, Karnataka"],
+  ["Participation", "Top 16 Teams from Round 1"],
 ];
 
 const fade = {
@@ -27,7 +27,7 @@ export default function About() {
             className="flex items-baseline justify-between border-t border-white/10 pt-5 mb-14 md:mb-20 font-mono text-[10px] tracking-[0.3em] uppercase text-white/45"
           >
             <span>Mission - 01</span>
-            <span className="hidden sm:block">Aug 08 - 09 · 2026</span>
+            <span className="hidden sm:block">Jun 15 — Aug 09 · 2026</span>
           </motion.div>
 
           {/* Headline */}

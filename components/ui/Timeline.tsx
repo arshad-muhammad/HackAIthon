@@ -7,16 +7,17 @@ type Item = {
   time: string;
   title: string;
   desc: string;
-  day: 1 | 2;
+  phase: "Round 1" | "Selection" | "Round 2";
 };
 
 const schedule: Item[] = [
-  { time: "09:00 AM", title: "Opening Ceremony", desc: "Welcome address and rules briefing.", day: 1 },
-  { time: "10:00 AM", title: "Hacking Begins", desc: "Teams assemble and start building.", day: 1 },
-  { time: "02:00 PM", title: "Mentor Sessions", desc: "1-on-1 guidance from industry experts.", day: 1 },
-  { time: "08:00 PM", title: "Checkpoint 1", desc: "Progress review and midnight snacks.", day: 1 },
-  { time: "08:00 AM", title: "Hacking Ends", desc: "Final code submission.", day: 2 },
-  { time: "10:00 AM", title: "Judging & Awards", desc: "Presentations and closing ceremony.", day: 2 },
+  { time: "June 15, 2026", title: "Round 1 Launches", desc: "Online screening dataset and problem statement released. Dataset audit begins.", phase: "Round 1" },
+  { time: "July 25, 2026", title: "Round 1 Submissions", desc: "Submit your 5-slide PPT or 3-page PDF detailing findings, anomalies, and proposed fixes.", phase: "Round 1" },
+  { time: "August 1, 2026", title: "Finalists Announced", desc: "Top 16 teams selected based on their data-centric findings are announced.", phase: "Selection" },
+  { time: "August 8, 2026 · 09:00 AM", title: "Round 2 Opening Ceremony", desc: "On-site welcome address, briefing, and dockets distribution at VRIF VTU Belagavi.", phase: "Round 2" },
+  { time: "August 8, 2026 · 10:00 AM", title: "Offline Hacking Commences", desc: "Teams assemble, get baseline models, and begin data optimization using 3LC.ai.", phase: "Round 2" },
+  { time: "August 9, 2026 · 08:00 AM", title: "Hacking Ends", desc: "Final model retraining freeze and submission of the optimized dataset.", phase: "Round 2" },
+  { time: "August 9, 2026 · 10:00 AM", title: "Judging & Ceremony", desc: "Live team presentations, mentor feedback, and final awards announcement.", phase: "Round 2" },
 ];
 
 export default function Timeline() {
@@ -27,13 +28,11 @@ export default function Timeline() {
   });
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
-  // Find first index of day 2 to mark a divider
-  const firstDay2 = schedule.findIndex((s) => s.day === 2);
-
   return (
     <section id="schedule" className="min-h-screen py-28 md:py-32 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <div className="cinematic-panel cinematic-panel-right max-w-4xl p-8 md:p-10">
+          
           {/* Heading */}
           <div className="text-center mb-20">
             <motion.span
@@ -66,10 +65,11 @@ export default function Timeline() {
 
             <div className="space-y-12">
               {schedule.map((item, index) => {
-                const showDay = index === 0 || index === firstDay2;
+                const showPhase = index === 0 || schedule[index - 1].phase !== item.phase;
+                
                 return (
                   <div key={index}>
-                    {showDay && (
+                    {showPhase && (
                       <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -79,7 +79,11 @@ export default function Timeline() {
                         <div className="ml-16 md:ml-0 md:flex md:justify-center">
                           <span className="inline-flex items-center gap-2 chip">
                             <span className="chip-dot" />
-                            {item.day === 1 ? "DAY 01 · AUGUST 8" : "DAY 02 · AUGUST 9"}
+                            {item.phase === "Round 1" 
+                              ? "ROUND 01 · ONLINE SCREENING" 
+                              : item.phase === "Selection" 
+                              ? "SELECTION STAGE" 
+                              : "ROUND 02 · OFFLINE FINALS"}
                           </span>
                         </div>
                       </motion.div>

@@ -63,43 +63,174 @@ export default function CommandPalette() {
   const baseActions = useMemo<Action[]>(
     () => [
       // Navigate
-      { id: "nav-home", label: "Top of page", group: "Navigate", icon: <HomeIcon className="w-3.5 h-3.5" />, keywords: "home hero", run: () => window.scrollTo({ top: 0, behavior: "smooth" }) },
-      { id: "nav-about", label: "About the mission", group: "Navigate", icon: <Sparkles className="w-3.5 h-3.5" />, keywords: "about mission", run: () => goto("about") },
-      { id: "nav-challenge", label: "The challenge", group: "Navigate", icon: <Zap className="w-3.5 h-3.5" />, keywords: "challenge data centric 3lc", run: () => goto("challenge") },
-      { id: "nav-schedule", label: "Schedule", group: "Navigate", icon: <Calendar className="w-3.5 h-3.5" />, keywords: "schedule timeline", run: () => goto("schedule") },
-      { id: "nav-sponsors", label: "Sponsors & partners", group: "Navigate", icon: <Trophy className="w-3.5 h-3.5" />, keywords: "sponsors partners", run: () => goto("sponsors") },
-      { id: "nav-faq", label: "FAQ", group: "Navigate", icon: <HelpCircle className="w-3.5 h-3.5" />, keywords: "faq questions", run: () => goto("faq") },
-      { id: "nav-sphere", label: "About Sphere Hive", group: "Navigate", icon: <Users className="w-3.5 h-3.5" />, keywords: "sphere hive team", run: () => goto("sphere-hive") },
+      {
+        id: "nav-home",
+        label: "Top of page",
+        group: "Navigate",
+        icon: <HomeIcon className="w-3.5 h-3.5" />,
+        keywords: "home hero",
+        run: () => window.scrollTo({ top: 0, behavior: "smooth" }),
+      },
+      {
+        id: "nav-about",
+        label: "About the mission",
+        group: "Navigate",
+        icon: <Sparkles className="w-3.5 h-3.5" />,
+        keywords: "about mission",
+        run: () => goto("about"),
+      },
+      {
+        id: "nav-challenge",
+        label: "The challenge",
+        group: "Navigate",
+        icon: <Zap className="w-3.5 h-3.5" />,
+        keywords: "challenge data centric 3lc",
+        run: () => goto("challenge"),
+      },
+      {
+        id: "nav-schedule",
+        label: "Schedule",
+        group: "Navigate",
+        icon: <Calendar className="w-3.5 h-3.5" />,
+        keywords: "schedule timeline",
+        run: () => goto("schedule"),
+      },
+      {
+        id: "nav-sponsors",
+        label: "Sponsors & partners",
+        group: "Navigate",
+        icon: <Trophy className="w-3.5 h-3.5" />,
+        keywords: "sponsors partners",
+        run: () => goto("sponsors"),
+      },
+      {
+        id: "nav-faq",
+        label: "FAQ",
+        group: "Navigate",
+        icon: <HelpCircle className="w-3.5 h-3.5" />,
+        keywords: "faq questions",
+        run: () => goto("faq"),
+      },
+      {
+        id: "nav-sphere",
+        label: "About Sphere Hive",
+        group: "Navigate",
+        icon: <Users className="w-3.5 h-3.5" />,
+        keywords: "sphere hive team",
+        run: () => goto("sphere-hive"),
+      },
 
       // Actions
-      { id: "act-register", label: "Register for Hack[AI]Thon 2.0", hint: "Opens Unstop", group: "Actions", icon: <Rocket className="w-3.5 h-3.5" />, keywords: "register signup join", run: () => window.open("https://unstop.com/p/hackaithon-20-sphere-hive-kvg-college-of-engineering-sullia-1699309", "_blank", "noopener,noreferrer") },
-      { id: "act-manifesto", label: "Read the manifesto", group: "Actions", icon: <FileText className="w-3.5 h-3.5" />, keywords: "manifesto why data centric", run: () => (window.location.href = "/manifesto") },
-      { id: "act-email", label: "Email the organisers", hint: "spherehive@kvgce.ac.in", group: "Actions", icon: <Mail className="w-3.5 h-3.5" />, keywords: "email contact mail", run: () => (window.location.href = "mailto:spherehive@kvgce.ac.in") },
-      { id: "act-whatsapp", label: "Join the WhatsApp community", group: "Actions", icon: <MessageCircle className="w-3.5 h-3.5" />, keywords: "whatsapp community chat", run: () => window.open("https://chat.whatsapp.com/IhdbBT7OKAd1LHpYy9XBkc", "_blank", "noopener,noreferrer") },
+      {
+        id: "act-register",
+        label: "Register for Hack[AI]Thon 2.0",
+        hint: "Opens Unstop",
+        group: "Actions",
+        icon: <Rocket className="w-3.5 h-3.5" />,
+        keywords: "register signup join",
+        run: () =>
+          window.open(
+            "https://unstop.com/p/hackaithon-20-sphere-hive-kvg-college-of-engineering-sullia-1699309",
+            "_blank",
+            "noopener,noreferrer",
+          ),
+      },
+      {
+        id: "act-manifesto",
+        label: "Read the manifesto",
+        group: "Actions",
+        icon: <FileText className="w-3.5 h-3.5" />,
+        keywords: "manifesto why data centric",
+        run: () => (window.location.href = "/manifesto"),
+      },
+      {
+        id: "act-resources",
+        label: "View round 1 resources",
+        group: "Actions",
+        icon: <FileText className="w-3.5 h-3.5" />,
+        keywords: "resources datasets download problem statement detective",
+        run: () => (window.location.href = "/resources"),
+      },
+      {
+        id: "act-email",
+        label: "Email the organisers",
+        hint: "spherehive@kvgce.ac.in",
+        group: "Actions",
+        icon: <Mail className="w-3.5 h-3.5" />,
+        keywords: "email contact mail",
+        run: () => (window.location.href = "mailto:spherehive@kvgce.ac.in"),
+      },
+      {
+        id: "act-whatsapp",
+        label: "Join the WhatsApp community",
+        group: "Actions",
+        icon: <MessageCircle className="w-3.5 h-3.5" />,
+        keywords: "whatsapp community chat",
+        run: () =>
+          window.open(
+            "https://chat.whatsapp.com/EfZ0JvCYzBR6jxjjx52flO?s=cl&p=a&mlu=1",
+            "_blank",
+            "noopener,noreferrer",
+          ),
+      },
 
       // System
-      { id: "sys-admin", label: "Open Mission Control", hint: "Admin", group: "System", icon: <ShieldCheck className="w-3.5 h-3.5" />, keywords: "admin login", run: () => (window.location.href = "/admin") },
-      { id: "sys-source", label: "View source on GitHub", group: "System", icon: <ExternalLink className="w-3.5 h-3.5" />, keywords: "source github code", run: () => window.open("https://github.com", "_blank", "noopener,noreferrer") },
+      {
+        id: "sys-admin",
+        label: "Open Mission Control",
+        hint: "Admin",
+        group: "System",
+        icon: <ShieldCheck className="w-3.5 h-3.5" />,
+        keywords: "admin login",
+        run: () => (window.location.href = "/admin"),
+      },
+      {
+        id: "sys-source",
+        label: "View source on GitHub",
+        group: "System",
+        icon: <ExternalLink className="w-3.5 h-3.5" />,
+        keywords: "source github code",
+        run: () =>
+          window.open("https://github.com", "_blank", "noopener,noreferrer"),
+      },
     ],
-    [goto]
+    [goto],
   );
 
   const easterActions = useMemo<Action[]>(
     () => [
-      { id: "egg-boot", label: "Boot sequence", hint: "Reload the splash", group: "Easter Eggs", icon: <Sparkles className="w-3.5 h-3.5" />, keywords: "boot splash intro", run: () => window.location.reload() },
-      { id: "egg-snake", label: "Lost in space (snake)", group: "Easter Eggs", icon: <Zap className="w-3.5 h-3.5" />, keywords: "snake game 404", run: () => (window.location.href = "/lost") },
+      {
+        id: "egg-boot",
+        label: "Boot sequence",
+        hint: "Reload the splash",
+        group: "Easter Eggs",
+        icon: <Sparkles className="w-3.5 h-3.5" />,
+        keywords: "boot splash intro",
+        run: () => window.location.reload(),
+      },
+      {
+        id: "egg-snake",
+        label: "Lost in space (snake)",
+        group: "Easter Eggs",
+        icon: <Zap className="w-3.5 h-3.5" />,
+        keywords: "snake game 404",
+        run: () => (window.location.href = "/lost"),
+      },
     ],
-    []
+    [],
   );
 
-  const actions = konamiUnlocked ? [...baseActions, ...easterActions] : baseActions;
+  const actions = konamiUnlocked
+    ? [...baseActions, ...easterActions]
+    : baseActions;
 
   // ----- Filter -----
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (!q) return actions;
     return actions.filter((a) => {
-      const hay = `${a.label} ${a.hint ?? ""} ${a.keywords ?? ""} ${a.group}`.toLowerCase();
+      const hay =
+        `${a.label} ${a.hint ?? ""} ${a.keywords ?? ""} ${a.group}`.toLowerCase();
       return q.split(/\s+/).every((token) => hay.includes(token));
     });
   }, [actions, query]);
@@ -127,7 +258,9 @@ export default function CommandPalette() {
         if (konamiBuf.current.length > KONAMI.length) konamiBuf.current.shift();
         if (
           konamiBuf.current.length === KONAMI.length &&
-          konamiBuf.current.every((k, i) => k.toLowerCase() === KONAMI[i].toLowerCase())
+          konamiBuf.current.every(
+            (k, i) => k.toLowerCase() === KONAMI[i].toLowerCase(),
+          )
         ) {
           setKonamiUnlocked(true);
           setOpen(true);
@@ -200,7 +333,9 @@ export default function CommandPalette() {
 
   // Scroll active into view
   useEffect(() => {
-    const el = listRef.current?.querySelector<HTMLLIElement>(`[data-idx='${active}']`);
+    const el = listRef.current?.querySelector<HTMLLIElement>(
+      `[data-idx='${active}']`,
+    );
     el?.scrollIntoView({ block: "nearest" });
   }, [active]);
 
@@ -315,12 +450,19 @@ export default function CommandPalette() {
             <div className="flex items-center justify-between border-t border-white/10 px-4 sm:px-5 h-10 font-mono text-[10px] tracking-[0.22em] uppercase text-white/45">
               <div className="flex items-center gap-3">
                 <span>
-                  <kbd className="border border-white/10 rounded px-1.5 py-0.5 mr-1.5">↑</kbd>
-                  <kbd className="border border-white/10 rounded px-1.5 py-0.5">↓</kbd>{" "}
+                  <kbd className="border border-white/10 rounded px-1.5 py-0.5 mr-1.5">
+                    ↑
+                  </kbd>
+                  <kbd className="border border-white/10 rounded px-1.5 py-0.5">
+                    ↓
+                  </kbd>{" "}
                   navigate
                 </span>
                 <span className="hidden sm:inline">
-                  <kbd className="border border-white/10 rounded px-1.5 py-0.5">↵</kbd> run
+                  <kbd className="border border-white/10 rounded px-1.5 py-0.5">
+                    ↵
+                  </kbd>{" "}
+                  run
                 </span>
               </div>
               <div className="flex items-center gap-2">
@@ -330,8 +472,13 @@ export default function CommandPalette() {
                   </span>
                 )}
                 <span>
-                  <kbd className="border border-white/10 rounded px-1.5 py-0.5">⌘K</kbd> /{" "}
-                  <kbd className="border border-white/10 rounded px-1.5 py-0.5">?</kbd>
+                  <kbd className="border border-white/10 rounded px-1.5 py-0.5">
+                    ⌘K
+                  </kbd>{" "}
+                  /{" "}
+                  <kbd className="border border-white/10 rounded px-1.5 py-0.5">
+                    ?
+                  </kbd>
                 </span>
               </div>
             </div>

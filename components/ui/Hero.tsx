@@ -101,13 +101,11 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2, delay: 1.3 }}
-            className="mt-7 flex items-center gap-3 sm:gap-5 font-mono text-[10px] sm:text-[11px] tracking-[0.3em] uppercase text-white/55"
+            className="mt-7 flex flex-col md:flex-row items-center gap-3 sm:gap-5 font-mono text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-white/55"
           >
-            <span>24 Hours</span>
-            <span className="w-1 h-1 rounded-full bg-white/30" />
-            <span>Aug 08–09 · 2026</span>
-            <span className="w-1 h-1 rounded-full bg-white/30" />
-            <span>VRIF VTU Belagavi</span>
+            <span>Round 1: Online (Jun 15 – Jul 25)</span>
+            <span className="hidden md:inline w-1 h-1 rounded-full bg-white/30" />
+            <span>Round 2: Offline Finals (Aug 08 – 09 @ VRIF VTU)</span>
           </motion.div>
 
           {/* CTAs */}
