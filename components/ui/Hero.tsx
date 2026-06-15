@@ -1,6 +1,11 @@
 "use client";
 
-import { motion, useScroll, useTransform, useReducedMotion } from "motion/react";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useReducedMotion,
+} from "motion/react";
 import { ChevronRight } from "lucide-react";
 import { useRef } from "react";
 
@@ -42,7 +47,7 @@ export default function Hero() {
           className="pt-32 sm:pt-36 flex justify-center"
         >
           <span className="font-mono text-[10px] tracking-[0.5em] uppercase text-white/45">
-            Sphere Hive · Presents
+            KVGCE, Sphere Hive X VRIF VTU Belagavi · Presents
           </span>
         </motion.div>
 
@@ -54,7 +59,8 @@ export default function Hero() {
           {/* Screen-reader-only descriptive heading. The visible wordmark
               below is decorative; this is the keyword-rich semantic H1. */}
           <h1 className="sr-only">
-            Hack[AI]Thon 2.0 2026 - National AI Hackathon at VRIF VTU Belagavi · 24 hours · Aug 8 - 9, 2026
+            Hack[AI]Thon 2.0 2026 - National AI Hackathon at VRIF VTU Belagavi ·
+            24 hours · Aug 8 - 9, 2026
           </h1>
           <motion.div
             aria-hidden="true"
@@ -73,7 +79,9 @@ export default function Hero() {
                 src="/logo-transparent.png"
                 alt="AI Logo"
                 className="h-[1.05em] w-auto object-contain"
-                style={{ filter: "drop-shadow(0 2px 20px rgba(220,38,38,0.45))" }}
+                style={{
+                  filter: "drop-shadow(0 2px 20px rgba(220,38,38,0.45))",
+                }}
               />
               <span>THON</span>
             </div>
