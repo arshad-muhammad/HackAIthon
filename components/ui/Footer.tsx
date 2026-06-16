@@ -139,10 +139,10 @@ export default function Footer() {
 
         {/* Watermark */}
         <div className="relative overflow-hidden mb-8">
-          <div className="font-display font-black text-center leading-[0.85] tracking-[-0.05em] uppercase text-[14vw] md:text-[12vw] text-stroke select-none pointer-events-none">
-            HACK[AI]THON 2.0
-          </div>
-        </div>
+  <div className="font-display font-black text-center whitespace-nowrap leading-[0.85] tracking-[-0.05em] uppercase text-[14vw] md:text-[12vw] text-stroke select-none pointer-events-none">
+    HACK[AI]THON 2.0
+  </div>
+</div>
 
         {/* Bottom bar */}
         <div className="pt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
