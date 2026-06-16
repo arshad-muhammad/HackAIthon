@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function ResourcesPage() {
   const datasetUrl =
-    "https://drive.google.com/file/d/1irSN2E9hQ7yWMhIINUAEot40d-GXtF8A/view?usp=sharing";
+    "https://drive.google.com/file/d/1XD-yVCQNoO7OHTbTB1PLSSgA8-m2JFc3/view?usp=sharing";
 
   return (
     <article className="relative pt-36 pb-32">

@@ -163,10 +163,10 @@ export default function RootLayout({
         <ScrollProgress />
 
         {/* Side rails */}
-        <div className="fixed bottom-10 left-10 [writing-mode:vertical-rl] rotate-180 text-[10px] font-mono tracking-[0.4em] uppercase text-white/25 z-40 pointer-events-none hidden lg:block">
+        <div className="side-rail fixed bottom-10 left-10 [writing-mode:vertical-rl] rotate-180 text-[10px] font-mono tracking-[0.4em] uppercase text-white/25 z-40 pointer-events-none hidden lg:block">
           鍛冶場 · Samurai · Code
         </div>
-        <div className="fixed bottom-10 right-10 [writing-mode:vertical-rl] text-[10px] font-mono tracking-[0.4em] uppercase text-white/25 z-40 pointer-events-none hidden lg:block">
+        <div className="side-rail fixed bottom-10 right-10 [writing-mode:vertical-rl] text-[10px] font-mono tracking-[0.4em] uppercase text-white/25 z-40 pointer-events-none hidden lg:block">
           Hack[AI]Thon · 2.0
         </div>
 

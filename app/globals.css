@@ -598,3 +598,15 @@
     backface-visibility: hidden;
   }
 }
+
+/* Hide global layout elements when brochure is active */
+body.brochure-active nav:not(.screen-viewer nav),
+body.brochure-active footer:not(.screen-viewer footer),
+body.brochure-active header:not(.screen-viewer header),
+body.brochure-active .side-rail,
+body.brochure-active [class*="ScrollProgress"] {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
