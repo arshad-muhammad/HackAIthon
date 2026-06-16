@@ -61,10 +61,10 @@ export const SITE = {
   },
 
   socials: {
-    twitter: "https://twitter.com",
+    twitter: "https://twitter.com/spherehive",
     instagram: "https://www.instagram.com/spherehive",
-    linkedin: "https://linkedin.com",
-    github: "https://github.com",
+    linkedin: "https://linkedin.com/company/spherehive",
+    github: "https://github.com/kvgce-spherehive",
   },
 } as const;
 

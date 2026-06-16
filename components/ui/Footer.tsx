@@ -5,10 +5,10 @@ import { motion } from "motion/react";
 import { Github, Instagram, Linkedin, Twitter, Mail, ArrowUp } from "lucide-react";
 
 const socials = [
-  { Icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-  { Icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-  { Icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { Icon: Github, href: "https://github.com", label: "GitHub" },
+  { Icon: Twitter, href: "https://twitter.com/spherehive", label: "Twitter" },
+  { Icon: Instagram, href: "https://instagram.com/spherehive", label: "Instagram" },
+  { Icon: Linkedin, href: "https://linkedin.com/company/spherehive", label: "LinkedIn" },
+  { Icon: Github, href: "https://github.com/kvgce-spherehive", label: "GitHub" },
 ];
 
 const links = {
@@ -139,7 +139,7 @@ export default function Footer() {
 
         {/* Watermark */}
         <div className="relative overflow-hidden mb-8">
-          <div className="font-display font-black text-center leading-[0.85] tracking-[-0.05em] uppercase text-[18vw] md:text-[15vw] text-stroke select-none pointer-events-none">
+          <div className="font-display font-black text-center leading-[0.85] tracking-[-0.05em] uppercase text-[14vw] md:text-[12vw] text-stroke select-none pointer-events-none">
             HACK[AI]THON 2.0
           </div>
         </div>
@@ -147,7 +147,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="font-mono text-[11px] tracking-[0.2em] text-ink-dim uppercase">
-            © {new Date().getFullYear()} Hack[AI]Thon 2.0 · Coded in the cosmos
+            © {new Date().getFullYear()} Hack[AI]Thon 2.0 · Beyond code. Into intelligence.
           </div>
 
           <button

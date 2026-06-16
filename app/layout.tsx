@@ -43,6 +43,7 @@ export const metadata: Metadata = {
     "AI hackathon India",
     "national hackathon 2026",
     "national level hackathon Karnataka",
+    "VTU Hackathon",
     "VRIF VTU Belagavi hackathon",
     "data centric AI hackathon",
     "3LC.ai hackathon",
