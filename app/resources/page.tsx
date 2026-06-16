@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function ResourcesPage() {
   const starterKitUrl =
-    "https://drive.google.com/file/d/1_vn_PtEHYG7ngy143iNC0lSp0X3Pi2fR/view?usp=sharing";
+    "https://drive.google.com/file/d/1Wn_UXHZT-YPrLTPdiYjVS_nFewWI1udj/view?usp=sharing";
 
   return (
     <article className="relative pt-36 pb-32">

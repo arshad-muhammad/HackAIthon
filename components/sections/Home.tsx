@@ -8,6 +8,7 @@ import Challenge from '../ui/Challenge';
 import Timeline from '../ui/Timeline';
 import Sponsors from '../ui/Sponsors';
 import FAQ from '../ui/FAQ';
+import Community from '../ui/Community';
 import CTA from '../ui/CTA';
 import SphereHive from '../ui/SphereHive';
 
@@ -26,6 +27,7 @@ export default function Home() {
             <Timeline />
             <Sponsors />
             <FAQ />
+            <Community />
             <CTA />
             <SphereHive />
         </>
