@@ -7,13 +7,13 @@ import { absoluteUrl, SITE } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Round 1 Resources · Data Detective Challenge",
   description:
-    "Dataset packages, problem statement documents, objectives, and deliverables for the Hack[AI]Thon 2.0 2026 Online Screening Round.",
+    "Starter kit package, problem statement documents, objectives, and deliverables for the Hack[AI]Thon 2.0 2026 Online Screening Round.",
   alternates: { canonical: "/resources" },
   openGraph: {
     type: "article",
     title: "Round 1 Resources - Hack[AI]Thon 2.0 2026",
     description:
-      "Download the screening round dataset and read the full problem statement details.",
+      "Download the screening round starter kit and read the full problem statement details.",
     url: absoluteUrl("/resources"),
     siteName: SITE.name,
     images: [absoluteUrl("/api/og?team=Resources")],
@@ -22,14 +22,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Round 1 Resources - Hack[AI]Thon 2.0 2026",
     description:
-      "Download the screening round dataset and read the full problem statement details.",
+      "Download the screening round starter kit and read the full problem statement details.",
     images: [absoluteUrl("/api/og?team=Resources")],
   },
 };
 
 export default function ResourcesPage() {
-  const datasetUrl =
-    "https://drive.google.com/file/d/1XD-yVCQNoO7OHTbTB1PLSSgA8-m2JFc3/view?usp=sharing";
+  const starterKitUrl =
+    "https://drive.google.com/file/d/1_vn_PtEHYG7ngy143iNC0lSp0X3Pi2fR/view?usp=sharing";
 
   return (
     <article className="relative pt-36 pb-32">
@@ -62,7 +62,7 @@ export default function ResourcesPage() {
         {/* Introduction */}
         <p className="text-white/85 text-lg leading-[1.7] mb-10 font-light">
           Welcome to the Online Screening Round (Round 1) of Hack[AI]Thon 2.0.
-          Below you will find the problem statement criteria, dataset files, and
+          Below you will find the problem statement criteria, starter kit, and
           deliverables required to qualify for the offline finals.
         </p>
 
@@ -70,24 +70,23 @@ export default function ResourcesPage() {
         <div className="glass-card border-gradient rounded-2xl p-6 sm:p-8 mb-12 flex flex-col sm:flex-row items-center justify-between gap-5">
           <div className="text-center sm:text-left">
             <div className="text-space-purple-glow font-mono text-[9px] uppercase tracking-[0.25em] font-bold mb-2">
-              Data Package
+              Starter Kit
             </div>
             <h3 className="font-display text-lg sm:text-xl font-black text-white tracking-tight mb-1">
-              Waste Classification Dataset
+              Waste Classification Starter Kit
             </h3>
             <p className="text-[12px] text-white/55 font-light max-w-md">
-              Contains the training images (labeled & unlabeled) with
-              intentionally introduced noise and label bugs.
+              Contains the dataset, fixed ResNet-18 baseline training pipeline, registration scripts, and setup instructions.
             </p>
           </div>
           <a
-            href={datasetUrl}
+            href={starterKitUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.15em] shrink-0"
           >
             <Download className="w-4 h-4" />
-            Download Dataset
+            Download Starter Kit
           </a>
         </div>
 
@@ -143,9 +142,27 @@ export default function ResourcesPage() {
           </div>
           <div className="space-y-5 text-white/75 text-[15px] sm:text-base leading-[1.75] font-light">
             <p>
-              Submit either a **maximum 5-slide PowerPoint Presentation (PPT)**
-              or a **maximum 3-page PDF document** outlining the following
-              sections:
+              Submissions must be uploaded through{" "}
+              <a
+                href={SITE.event.registerUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-space-purple-glow hover:underline font-bold"
+              >
+                Unstop
+              </a>{" "}
+              under the <strong>Rounds</strong> section. Teams are required to submit the following two files:
+            </p>
+            <ul className="list-disc list-inside space-y-2 pl-4">
+              <li>
+                A <strong>PowerPoint Presentation (PPT)</strong> (maximum 5 slides) or a <strong>PDF document</strong> (maximum 3-page) detailing your audit findings and strategy.
+              </li>
+              <li>
+                The generated <strong><code>submission.csv</code></strong> file containing your model predictions on the test set, outputted by the starter kit pipeline.
+              </li>
+            </ul>
+            <p className="mt-4">
+              Your PPT/PDF should outline the following sections:
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-5 gap-3 mt-6">
               {[
