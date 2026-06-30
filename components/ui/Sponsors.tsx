@@ -35,6 +35,12 @@ const sponsors = [
     logo: "/sponsors/xyz-logo-color.png",
     url: "https://gen.xyz",
   },
+  {
+    name: "Lenienttree",
+    tier: "Listing Sponsor",
+    logo: "/sponsors/lenienttree-logo.png",
+    url: "https://lenienttree.com",
+  },
 ];
 
 const marqueeWords = [
