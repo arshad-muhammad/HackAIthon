@@ -47,6 +47,12 @@ const sponsors = [
     logo: "/sponsors/TruScholar.svg",
     url: "https://www.truscholar.io",
   },
+  {
+    name: "SBI Life",
+    tier: "Goodies Sponsor",
+    logo: "/sponsors/SBILife-logoo.jpg",
+    url: "https://www.sbilife.co.in/",
+  },
 ];
 
 const marqueeWords = [
