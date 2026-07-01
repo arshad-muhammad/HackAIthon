@@ -41,6 +41,12 @@ const sponsors = [
     logo: "/sponsors/lenienttree-logo.png",
     url: "https://lenienttree.com",
   },
+  {
+    name: "TruScholar",
+    tier: "Credential Partner",
+    logo: "/sponsors/TruScholar.svg",
+    url: "https://www.truscholar.io",
+  },
 ];
 
 const marqueeWords = [
