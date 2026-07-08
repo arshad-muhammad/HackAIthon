@@ -51,7 +51,7 @@ const sponsors = [
     name: "SBI Life",
     tier: "Goodies Sponsor",
     logo: "/sponsors/SBILife-logoo.jpg",
-    url: "https://www.sbilife.co.in/",
+    url: "https://sangamesh991075469.lifemitra.com/",
   },
 ];
 
