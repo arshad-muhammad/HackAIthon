@@ -31,11 +31,6 @@ export const FAQS: FAQItem[] = [
       "You do. The code you ship during the hackathon stays entirely yours, except where sponsor-specific bounty rules apply - those are communicated up front.",
   },
   {
-    question: "Will food and drinks be provided at Hack[AI]Thon 2.0?",
-    answer:
-      "Yes. Full meals, snacks, and caffeine are provided throughout the 24-hour event so you can focus on building.",
-  },
-  {
     question: "Do I need prior AI or machine learning experience?",
     answer:
       "No prior expertise is required. Mentors and warm-up materials are provided so any motivated builder can compete on day one.",
@@ -48,7 +43,7 @@ export const FAQS: FAQItem[] = [
   {
     question: "What are the two rounds of the hackathon?",
     answer:
-      "Round 1 (Online Screening): June 15 – July 25, 2026, where teams identify bugs in a waste classification dataset. The top 16 teams qualify for Round 2 (Offline Finals): August 8 – 9, 2026, to retrain models using 3LC.ai.",
+      "Round 1 (Online Screening): June 15 – July 25, 2026, where teams identify bugs and improve a waste classification dataset using data-centric AI techniques. The top 16 teams qualify for Round 2 (Online Finals): August 8 – 9, 2026, where they build data pipelines and leverage 3LC.ai to systematically refine datasets and retrain models for maximum performance.",
   },
   {
     question: "What is the prize pool for Hack[AI]Thon 2.0 2026?",

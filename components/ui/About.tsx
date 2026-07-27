@@ -3,10 +3,10 @@
 import { motion } from "motion/react";
 
 const facts: [string, string][] = [
-  ["Round 1 (Online)", "June 15 — July 25, 2026"],
-  ["Round 2 (Offline)", "August 8 — 9, 2026"],
-  ["Venue (Round 2)", "VRIF VTU Belagavi, Karnataka"],
-  ["Participation", "Top 16 Teams from Round 1"],
+  ["Round 1 (Online)", "June 15 - July 25, 2026"],
+  ["Round 2 (Offline)", "August 8 - 9, 2026"],
+  ["Venue (Round 2)", "Online mode"],
+  ["Participation", "Top 16 teams from Round 1"],
 ];
 
 const fade = {
@@ -18,7 +18,10 @@ const fade = {
 
 export default function About() {
   return (
-    <section id="about" className="min-h-[80vh] flex items-center justify-end py-28 md:py-36 relative">
+    <section
+      id="about"
+      className="min-h-[80vh] flex items-center justify-end py-28 md:py-36 relative"
+    >
       <div className="container mx-auto px-6">
         <div className="cinematic-panel cinematic-panel-right max-w-4xl p-8 md:p-10">
           {/* Top meta rule */}
@@ -45,9 +48,9 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
             <motion.div {...fade} className="lg:col-span-7">
               <p className="text-[17px] md:text-lg text-white/85 leading-[1.65] mb-5 max-w-2xl">
-                Hack[AI]Thon 2.0 is not a competition. It&apos;s a 24-hour proving ground
-                where the most curious builders in the country gather to push the
-                edges of artificial intelligence.
+                Hack[AI]Thon 2.0 is not a competition. It&apos;s a 24-hour
+                proving ground where the most curious builders in the country
+                gather to push the edges of artificial intelligence.
               </p>
               <p className="text-[15px] md:text-base text-white/55 leading-[1.7] max-w-2xl">
                 No model architectures to brute-force. No leaderboard tricks.
@@ -63,13 +66,16 @@ export default function About() {
               </div>
             </motion.div>
 
-            <motion.dl {...fade} className="lg:col-span-5 border-t border-white/10">
+            <motion.dl
+              {...fade}
+              className="lg:col-span-5 border-t border-white/10"
+            >
               {facts.map(([k, v]) => (
                 <div
                   key={k}
                   className="border-b border-white/10 py-4 grid grid-cols-12 gap-4 items-baseline"
                 >
-                  <dt className="col-span-4 font-mono text-[10px] tracking-[0.3em] uppercase text-white/45">
+                  <dt className="col-span-4 font-mono text-[9px] tracking-[0.3em] uppercase text-white/45">
                     {k}
                   </dt>
                   <dd className="col-span-8 text-[15px] text-white/90 font-light tracking-tight">
