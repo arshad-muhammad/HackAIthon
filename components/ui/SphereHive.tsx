@@ -49,7 +49,10 @@ const fade = {
 
 export default function SphereHive() {
   return (
-    <section id="sphere-hive" className="min-h-screen flex items-center justify-center py-28 md:py-36 relative">
+    <section
+      id="sphere-hive"
+      className="min-h-screen flex items-center justify-center py-28 md:py-36 relative"
+    >
       <div className="cinematic-panel mx-auto max-w-5xl p-8 md:p-10">
         {/* Top meta rule */}
         <motion.div
@@ -103,9 +106,9 @@ export default function SphereHive() {
               November 2024.
             </p>
             <p className="text-[15px] md:text-base text-white/55 leading-[1.7]">
-              In under two years we&apos;ve run national hackathons, competed at
-              VRIF VTU Belagavi-level events, partnered with industry, and built an active
-              student community across India.
+              In under two years, we've hosted national online hackathons,
+              partnered with industry leaders, and built an active student
+              community connecting innovators from across India.
             </p>
 
             <a

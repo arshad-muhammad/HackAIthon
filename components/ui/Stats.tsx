@@ -13,10 +13,30 @@ type Stat = {
 };
 
 const stats: Stat[] = [
-  { label: "Builders", value: 200, suffix: "+", desc: "Engineers and designers nationwide." },
-  { label: "Mentors", value: 20, suffix: "+", desc: "From leading AI research and industry." },
-  { label: "Prize Pool", value: 35, prefix: "₹", suffix: "K", desc: "Plus sponsored prizes & goodies." },
-  { label: "Arena", staticValue: "VRIF VTU", desc: "Belagavi · 24-hour offline." },
+  {
+    label: "Builders",
+    value: 200,
+    suffix: "+",
+    desc: "Engineers and designers nationwide.",
+  },
+  {
+    label: "Mentors",
+    value: 20,
+    suffix: "+",
+    desc: "From leading AI research and industry.",
+  },
+  {
+    label: "Prize Pool",
+    value: 35,
+    prefix: "₹",
+    suffix: "K",
+    desc: "Plus sponsored prizes & goodies.",
+  },
+  {
+    label: "Arena",
+    staticValue: "Online",
+    desc: "24-Hour National AI Hackathon",
+  },
 ];
 
 export default function Stats() {
@@ -31,7 +51,11 @@ export default function Stats() {
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-10% 0px" }}
-                transition={{ duration: 0.6, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] as const }}
+                transition={{
+                  duration: 0.6,
+                  delay: i * 0.06,
+                  ease: [0.16, 1, 0.3, 1] as const,
+                }}
                 className={`px-5 sm:px-7 py-7 sm:py-8 ${
                   i < stats.length - 1 ? "lg:border-r border-white/10" : ""
                 } ${i % 2 === 0 ? "border-r border-white/10 lg:border-r" : ""} ${
@@ -45,7 +69,11 @@ export default function Stats() {
                   {s.staticValue ? (
                     s.staticValue
                   ) : (
-                    <CountUp to={s.value!} prefix={s.prefix} suffix={s.suffix} />
+                    <CountUp
+                      to={s.value!}
+                      prefix={s.prefix}
+                      suffix={s.suffix}
+                    />
                   )}
                 </div>
                 <div className="text-[12px] sm:text-[13px] text-white/55 leading-relaxed font-light">

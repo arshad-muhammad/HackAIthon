@@ -2,13 +2,32 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
-import { Github, Instagram, Linkedin, Twitter, Mail, ArrowUp } from "lucide-react";
+import {
+  Github,
+  Instagram,
+  Linkedin,
+  Twitter,
+  Mail,
+  ArrowUp,
+} from "lucide-react";
 
 const socials = [
   { Icon: Twitter, href: "https://twitter.com/spherehive", label: "Twitter" },
-  { Icon: Instagram, href: "https://instagram.com/spherehive", label: "Instagram" },
-  { Icon: Linkedin, href: "https://linkedin.com/company/spherehive", label: "LinkedIn" },
-  { Icon: Github, href: "https://github.com/kvgce-spherehive", label: "GitHub" },
+  {
+    Icon: Instagram,
+    href: "https://instagram.com/spherehive",
+    label: "Instagram",
+  },
+  {
+    Icon: Linkedin,
+    href: "https://linkedin.com/company/spherehive",
+    label: "LinkedIn",
+  },
+  {
+    Icon: Github,
+    href: "https://github.com/kvgce-spherehive",
+    label: "GitHub",
+  },
 ];
 
 const links = {
@@ -65,8 +84,9 @@ export default function Footer() {
             </Link>
 
             <p className="text-sm text-ink-dim font-light leading-relaxed max-w-md mb-6">
-              A national-level 24-hour AI hackathon presented by Sphere Hive at
-              VRIF VTU Belagavi. Build the future with the best minds in the country.
+              A national-level 24-hour online AI hackathon presented by Sphere
+              Hive. Collaborate remotely, innovate fearlessly, and build the
+              future alongside the brightest AI minds from across the country.
             </p>
 
             {/* Socials */}
@@ -124,7 +144,8 @@ export default function Footer() {
               spherehive@kvgce.ac.in
             </a>
             <p className="mt-4 text-[12px] text-ink-dim font-light leading-relaxed">
-              Sphere Hive, HQ · KVG College of Engineering · Sullia<br />
+              Sphere Hive, HQ · KVG College of Engineering · Sullia
+              <br />
               India · 574327
             </p>
 
@@ -139,15 +160,16 @@ export default function Footer() {
 
         {/* Watermark */}
         <div className="relative overflow-hidden mb-8">
-  <div className="font-display font-black text-center whitespace-nowrap leading-[0.85] tracking-[-0.05em] uppercase text-[14vw] md:text-[12vw] text-stroke select-none pointer-events-none">
-    HACK[AI]THON 2.0
-  </div>
-</div>
+          <div className="font-display font-black text-center whitespace-nowrap leading-[0.85] tracking-[-0.05em] uppercase text-[14vw] md:text-[12vw] text-stroke select-none pointer-events-none">
+            HACK[AI]THON 2.0
+          </div>
+        </div>
 
         {/* Bottom bar */}
         <div className="pt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="font-mono text-[11px] tracking-[0.2em] text-ink-dim uppercase">
-            © {new Date().getFullYear()} Hack[AI]Thon 2.0 · Beyond code. Into intelligence.
+            © {new Date().getFullYear()} Hack[AI]Thon 2.0 · Beyond code. Into
+            intelligence.
           </div>
 
           <button

@@ -15,7 +15,6 @@ export default function Challenge() {
     <section id="challenge" className="min-h-screen py-28 md:py-36 relative">
       <div className="container mx-auto px-6">
         <div className="cinematic-panel cinematic-panel-left max-w-4xl p-8 md:p-10">
-          
           {/* Header Metadata */}
           <motion.div
             {...fade}
@@ -34,7 +33,11 @@ export default function Challenge() {
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                delay: 0.1,
+                duration: 0.9,
+                ease: [0.16, 1, 0.3, 1],
+              }}
               className="font-display font-black text-white tracking-[-0.035em] leading-[0.92] uppercase text-[44px] sm:text-[68px] md:text-[92px] lg:text-[108px] mb-6"
             >
               Improve the data,
@@ -46,13 +49,13 @@ export default function Challenge() {
               transition={{ delay: 0.2 }}
               className="text-sm md:text-base text-white/55 max-w-2xl font-light leading-relaxed"
             >
-              Traditional AI tries to brute-force the algorithm. Data-Centric AI unlocks performance by auditing and improving the dataset itself.
+              Traditional AI tries to brute-force the algorithm. Data-Centric AI
+              unlocks performance by auditing and improving the dataset itself.
             </motion.p>
           </div>
 
           {/* Grid Layout for Rounds */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 border-t border-white/10 pt-12">
-            
             {/* Round 1 Card */}
             <motion.div
               {...fade}
@@ -65,37 +68,51 @@ export default function Challenge() {
                     <span className="chip-dot" />
                     Round 01 · Online
                   </span>
-                  <span className="text-[10px] font-mono text-white/35">June 15 — July 25, 2026</span>
+                  <span className="text-[10px] font-mono text-white/35">
+                    June 15 — July 25, 2026
+                  </span>
                 </div>
 
                 <h3 className="font-display text-xl font-black text-white tracking-tight uppercase mb-4 group-hover:text-space-purple-glow transition-colors">
                   Data Detective: Finding Hidden Problems
                 </h3>
-                
+
                 <p className="text-[13px] text-white/70 leading-relaxed mb-6 font-light">
-                  Inspect the provided dataset to spot introduced bugs that degrade classifier accuracy. Work strictly on data quality without touching the baseline model.
+                  Inspect the provided dataset to spot introduced bugs that
+                  degrade classifier accuracy. Work strictly on data quality
+                  without touching the baseline model.
                 </p>
 
                 {/* Sub-details */}
                 <div className="space-y-5 border-t border-white/10 pt-6 mb-6">
                   <div>
-                    <h4 className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/45 mb-1">Dataset Provided</h4>
+                    <h4 className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/45 mb-1">
+                      Dataset Provided
+                    </h4>
                     <p className="text-[12px] text-white/80 font-light leading-relaxed">
-                      500 Labeled + 100 Unlabeled images across 5 classes (Plastic, Paper, Metal, Glass, Organic Waste).
+                      500 Labeled + 100 Unlabeled images across 5 classes
+                      (Plastic, Paper, Metal, Glass, Organic Waste).
                     </p>
                   </div>
 
                   <div>
-                    <h4 className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/45 mb-1">Introduced Bugs</h4>
+                    <h4 className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/45 mb-1">
+                      Introduced Bugs
+                    </h4>
                     <p className="text-[12px] text-white/80 font-light leading-relaxed">
-                      Wrong labels, duplicate images, blurry images, class imbalance, and outliers.
+                      Wrong labels, duplicate images, blurry images, class
+                      imbalance, and outliers.
                     </p>
                   </div>
 
                   <div>
-                    <h4 className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/45 mb-1">Round 1 Submission</h4>
+                    <h4 className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/45 mb-1">
+                      Round 1 Submission
+                    </h4>
                     <p className="text-[12px] text-white/80 font-light leading-relaxed">
-                      Max 5-slide PPT or 3-page PDF auditing the dataset (Overview, problems, evidence, fixes, and expected impact).
+                      Max 5-slide PPT or 3-page PDF auditing the dataset
+                      (Overview, problems, evidence, fixes, and expected
+                      impact).
                     </p>
                   </div>
                 </div>
@@ -111,8 +128,12 @@ export default function Challenge() {
               </div>
 
               <div className="border-t border-white/5 pt-6 flex items-center justify-between">
-                <span className="font-mono text-[10px] tracking-[0.2em] text-white/35 uppercase">Selection</span>
-                <span className="text-[11px] text-white font-bold uppercase tracking-wider">Top 16 Teams Selected</span>
+                <span className="font-mono text-[10px] tracking-[0.2em] text-white/35 uppercase">
+                  Selection
+                </span>
+                <span className="text-[11px] text-white font-bold uppercase tracking-wider">
+                  Top 16 Teams Selected
+                </span>
               </div>
             </motion.div>
 
@@ -128,48 +149,66 @@ export default function Challenge() {
                     <span className="chip-dot" />
                     Round 02 · Offline
                   </span>
-                  <span className="text-[10px] font-mono text-white/35">August 8 — 9, 2026</span>
+                  <span className="text-[10px] font-mono text-white/35">
+                    August 8 — 9, 2026
+                  </span>
                 </div>
 
                 <h3 className="font-display text-xl font-black text-white tracking-tight uppercase mb-4 group-hover:text-space-purple-glow transition-colors">
                   The 3LC Retraining Arena (Finals)
                 </h3>
-                
+
                 <p className="text-[13px] text-white/70 leading-relaxed mb-6 font-light">
-                  This is where 3LC.ai comes in. Finalists work on-site at VRIF VTU Belagavi, writing data pipelines and using 3LC to systematically select and correct data to maximize model performance.
+                  This is where 3LC.ai comes in. Finalists work entirely online,
+                  building data pipelines and using 3LC to systematically
+                  identify, analyse, and correct data to maximise model
+                  performance.
                 </p>
 
                 {/* Sub-details */}
                 <div className="space-y-5 border-t border-white/10 pt-6 mb-6">
                   <div>
-                    <h4 className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/45 mb-1">Finalists Package</h4>
+                    <h4 className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/45 mb-1">
+                      Finalists Package
+                    </h4>
                     <p className="text-[12px] text-white/80 font-light leading-relaxed">
-                      500 Labeled + 5000 Unlabeled images, along with starter notebook (baseline training code & benchmark metrics).
+                      500 Labeled + 5000 Unlabeled images, along with starter
+                      notebook (baseline training code & benchmark metrics).
                     </p>
                   </div>
 
                   <div>
-                    <h4 className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/45 mb-1">Hacking Objective</h4>
+                    <h4 className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/45 mb-1">
+                      Hacking Objective
+                    </h4>
                     <p className="text-[12px] text-white/80 font-light leading-relaxed">
-                      Analyze embeddings, identify high-loss samples, label strategically, and retrain models to beat the baseline accuracy.
+                      Analyze embeddings, identify high-loss samples, label
+                      strategically, and retrain models to beat the baseline
+                      accuracy.
                     </p>
                   </div>
 
                   <div>
-                    <h4 className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/45 mb-1">3LC Integration</h4>
+                    <h4 className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/45 mb-1">
+                      3LC Integration
+                    </h4>
                     <p className="text-[12px] text-white/80 font-light leading-relaxed">
-                      Track per-sample metrics, edit labels, prune bad subsets, and measure the exact accuracy lift after retraining.
+                      Track per-sample metrics, edit labels, prune bad subsets,
+                      and measure the exact accuracy lift after retraining.
                     </p>
                   </div>
                 </div>
               </div>
 
               <div className="border-t border-white/5 pt-6 flex items-center justify-between">
-                <span className="font-mono text-[10px] tracking-[0.2em] text-white/35 uppercase">Venue Location</span>
-                <span className="text-[11px] text-white font-bold uppercase tracking-wider">VRIF VTU Belagavi</span>
+                <span className="font-mono text-[10px] tracking-[0.2em] text-white/35 uppercase">
+                  Venue Location
+                </span>
+                <span className="text-[11px] text-white font-bold uppercase tracking-wider">
+                  Online
+                </span>
               </div>
             </motion.div>
-
           </div>
 
           {/* Process Workflow Steps */}
@@ -181,19 +220,41 @@ export default function Challenge() {
 
             <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-white/10">
               {[
-                { n: "01", title: "Analyze Embeddings", d: "Audit features and embeddings to find distribution anomalies." },
-                { n: "02", title: "Select Samples", d: "Isolate the most critical and high-loss data points using 3LC." },
-                { n: "03", title: "Label Strategically", d: "Incorporate high-quality labels for chosen samples to resolve ambiguities." },
-                { n: "04", title: "Retrain & Measure", d: "Retrain the model on the refined dataset and measure the accuracy lift." }
+                {
+                  n: "01",
+                  title: "Analyze Embeddings",
+                  d: "Audit features and embeddings to find distribution anomalies.",
+                },
+                {
+                  n: "02",
+                  title: "Select Samples",
+                  d: "Isolate the most critical and high-loss data points using 3LC.",
+                },
+                {
+                  n: "03",
+                  title: "Label Strategically",
+                  d: "Incorporate high-quality labels for chosen samples to resolve ambiguities.",
+                },
+                {
+                  n: "04",
+                  title: "Retrain & Measure",
+                  d: "Retrain the model on the refined dataset and measure the accuracy lift.",
+                },
               ].map((s, i) => (
                 <motion.li
                   key={s.n}
                   initial={{ opacity: 0, y: 14 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-10% 0px" }}
-                  transition={{ duration: 0.55, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] as const }}
+                  transition={{
+                    duration: 0.55,
+                    delay: i * 0.06,
+                    ease: [0.16, 1, 0.3, 1] as const,
+                  }}
                   className={`group p-7 sm:p-8 transition-colors hover:bg-white/[0.02] ${
-                    i < 3 ? "border-b lg:border-b-0 lg:border-r border-white/10" : ""
+                    i < 3
+                      ? "border-b lg:border-b-0 lg:border-r border-white/10"
+                      : ""
                   }`}
                 >
                   <div className="font-mono text-[10px] tracking-[0.3em] text-white/35 mb-6">
@@ -209,7 +270,6 @@ export default function Challenge() {
               ))}
             </ol>
           </div>
-
         </div>
       </div>
     </section>

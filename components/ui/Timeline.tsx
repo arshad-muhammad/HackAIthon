@@ -11,13 +11,48 @@ type Item = {
 };
 
 const schedule: Item[] = [
-  { time: "June 15, 2026", title: "Round 1 Launches", desc: "Online screening dataset and problem statement released. Dataset audit begins.", phase: "Round 1" },
-  { time: "July 25, 2026", title: "Round 1 Submissions", desc: "Submit your 5-slide PPT or 3-page PDF detailing findings, anomalies, and proposed fixes.", phase: "Round 1" },
-  { time: "August 1, 2026", title: "Finalists Announced", desc: "Top 16 teams selected based on their data-centric findings are announced.", phase: "Selection" },
-  { time: "August 8, 2026 · 09:00 AM", title: "Round 2 Opening Ceremony", desc: "On-site welcome address, briefing, and dockets distribution at VRIF VTU Belagavi.", phase: "Round 2" },
-  { time: "August 8, 2026 · 10:00 AM", title: "Offline Hacking Commences", desc: "Teams assemble, get baseline models, and begin data optimization using 3LC.ai.", phase: "Round 2" },
-  { time: "August 9, 2026 · 08:00 AM", title: "Hacking Ends", desc: "Final model retraining freeze and submission of the optimized dataset.", phase: "Round 2" },
-  { time: "August 9, 2026 · 10:00 AM", title: "Judging & Ceremony", desc: "Live team presentations, mentor feedback, and final awards announcement.", phase: "Round 2" },
+  {
+    time: "June 15, 2026",
+    title: "Round 1 Launches",
+    desc: "Online screening dataset and problem statement released. Dataset audit begins.",
+    phase: "Round 1",
+  },
+  {
+    time: "July 25, 2026",
+    title: "Round 1 Submissions",
+    desc: "Submit your 5-slide PPT or 3-page PDF detailing findings, anomalies, and proposed fixes.",
+    phase: "Round 1",
+  },
+  {
+    time: "August 1, 2026",
+    title: "Finalists Announced",
+    desc: "Top 16 teams selected based on their data-centric findings are announced.",
+    phase: "Selection",
+  },
+  {
+    time: "August 8, 2026 · 09:00 AM",
+    title: "Round 2 Opening Ceremony",
+    desc: "Online welcome address, event briefing, and participation guidelines shared via Google Meet/Discord.",
+    phase: "Round 2",
+  },
+  {
+    time: "August 8, 2026 · 10:00 AM",
+    title: "Online Hacking Commences",
+    desc: "Teams assemble, get baseline models, and begin data optimization using 3LC.ai.",
+    phase: "Round 2",
+  },
+  {
+    time: "August 9, 2026 · 08:00 AM",
+    title: "Hacking Ends",
+    desc: "Final model retraining freeze and submission of the optimized dataset.",
+    phase: "Round 2",
+  },
+  {
+    time: "August 9, 2026 · 10:00 AM",
+    title: "Judging & Ceremony",
+    desc: "Live team presentations, mentor feedback, and final awards announcement.",
+    phase: "Round 2",
+  },
 ];
 
 export default function Timeline() {
@@ -29,10 +64,12 @@ export default function Timeline() {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section id="schedule" className="min-h-screen py-28 md:py-32 relative overflow-hidden">
+    <section
+      id="schedule"
+      className="min-h-screen py-28 md:py-32 relative overflow-hidden"
+    >
       <div className="container mx-auto px-6 relative z-10">
         <div className="cinematic-panel cinematic-panel-right max-w-4xl p-8 md:p-10">
-          
           {/* Heading */}
           <div className="text-center mb-20">
             <motion.span
@@ -65,8 +102,9 @@ export default function Timeline() {
 
             <div className="space-y-12">
               {schedule.map((item, index) => {
-                const showPhase = index === 0 || schedule[index - 1].phase !== item.phase;
-                
+                const showPhase =
+                  index === 0 || schedule[index - 1].phase !== item.phase;
+
                 return (
                   <div key={index}>
                     {showPhase && (
@@ -79,11 +117,11 @@ export default function Timeline() {
                         <div className="ml-16 md:ml-0 md:flex md:justify-center">
                           <span className="inline-flex items-center gap-2 chip">
                             <span className="chip-dot" />
-                            {item.phase === "Round 1" 
-                              ? "ROUND 01 · ONLINE SCREENING" 
-                              : item.phase === "Selection" 
-                              ? "SELECTION STAGE" 
-                              : "ROUND 02 · OFFLINE FINALS"}
+                            {item.phase === "Round 1"
+                              ? "ROUND 01 · ONLINE SCREENING"
+                              : item.phase === "Selection"
+                                ? "SELECTION STAGE"
+                                : "ROUND 02 · OFFLINE FINALS"}
                           </span>
                         </div>
                       </motion.div>
@@ -111,7 +149,9 @@ export default function Timeline() {
                       {/* Card */}
                       <div
                         className={`w-full md:w-1/2 pl-16 md:pl-0 ${
-                          index % 2 === 0 ? "md:pl-12" : "md:pr-12 text-left md:text-right"
+                          index % 2 === 0
+                            ? "md:pl-12"
+                            : "md:pr-12 text-left md:text-right"
                         }`}
                       >
                         <div className="group glass-card glass-card-hover border-gradient rounded-2xl p-6 hover-lift transition-all duration-300 relative overflow-hidden">
