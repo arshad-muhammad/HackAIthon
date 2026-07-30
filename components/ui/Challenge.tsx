@@ -69,7 +69,7 @@ export default function Challenge() {
                     Round 01 · Online
                   </span>
                   <span className="text-[10px] font-mono text-white/35">
-                    June 15 — July 25, 2026
+                    June 15 - July 25, 2026
                   </span>
                 </div>
 
@@ -147,10 +147,10 @@ export default function Challenge() {
                 <div className="flex items-center justify-between mb-6">
                   <span className="chip">
                     <span className="chip-dot" />
-                    Round 02 · Offline
+                    Round 02 · Online
                   </span>
                   <span className="text-[10px] font-mono text-white/35">
-                    August 8 — 9, 2026
+                    August 7 - 8, 2026
                   </span>
                 </div>
 

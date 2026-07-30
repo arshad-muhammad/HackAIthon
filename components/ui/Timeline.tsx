@@ -7,51 +7,34 @@ type Item = {
   time: string;
   title: string;
   desc: string;
-  phase: "Round 1" | "Selection" | "Round 2";
+  phase: "Final Round";
+  // phase: "Round 1" | "Selection" | "Round 2";
 };
 
 const schedule: Item[] = [
   {
-    time: "June 15, 2026",
-    title: "Round 1 Launches",
-    desc: "Online screening dataset and problem statement released. Dataset audit begins.",
-    phase: "Round 1",
+    time: "August 7, 2026 · 09:00 AM",
+    title: "Opening Ceremony",
+    desc: "Online welcome address, orientation session, and digital competition materials distribution hosted by VRIF VTU Belagavi.",
+    phase: "Final Round",
   },
   {
-    time: "July 25, 2026",
-    title: "Round 1 Submissions",
-    desc: "Submit your 5-slide PPT or 3-page PDF detailing findings, anomalies, and proposed fixes.",
-    phase: "Round 1",
+    time: "August 7, 2026 · 10:00 AM",
+    title: "Online Hacking Commences",
+    desc: "Teams assemble, get baseline models, and begin data optimization using 3LC.ai.",
+    phase: "Final Round",
   },
   {
-    time: "August 1, 2026",
-    title: "Finalists Announced",
-    desc: "Top 16 teams selected based on their data-centric findings are announced.",
-    phase: "Selection",
+    time: "August 8, 2026 · 08:00 AM",
+    title: "Hacking Ends",
+    desc: "Final model retraining freeze and submission of the optimized dataset.",
+    phase: "Final Round",
   },
   {
     time: "August 8, 2026 · 09:00 AM",
-    title: "Round 2 Opening Ceremony",
-    desc: "Online welcome address, orientation session, and digital competition materials distribution hosted by VRIF VTU Belagavi.",
-    phase: "Round 2",
-  },
-  {
-    time: "August 8, 2026 · 10:00 AM",
-    title: "Online Hacking Commences",
-    desc: "Teams assemble, get baseline models, and begin data optimization using 3LC.ai.",
-    phase: "Round 2",
-  },
-  {
-    time: "August 9, 2026 · 08:00 AM",
-    title: "Hacking Ends",
-    desc: "Final model retraining freeze and submission of the optimized dataset.",
-    phase: "Round 2",
-  },
-  {
-    time: "August 9, 2026 · 10:00 AM",
     title: "Judging & Ceremony",
     desc: "Live team presentations, mentor feedback, and final awards announcement.",
-    phase: "Round 2",
+    phase: "Final Round",
   },
 ];
 
@@ -117,11 +100,11 @@ export default function Timeline() {
                         <div className="ml-16 md:ml-0 md:flex md:justify-center">
                           <span className="inline-flex items-center gap-2 chip">
                             <span className="chip-dot" />
-                            {item.phase === "Round 1"
-                              ? "ROUND 01 · ONLINE SCREENING"
-                              : item.phase === "Selection"
+                            {/* {item.phase === "Round 1"
+                              ? "ROUND 01 · ONLINE SCREENING": */}
+                               {item.phase === "Selection"
                                 ? "SELECTION STAGE"
-                                : "ROUND 02 · OFFLINE FINALS"}
+                                : "FINALS OFFLINE ROUND"}
                           </span>
                         </div>
                       </motion.div>

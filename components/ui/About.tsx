@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 
 const facts: [string, string][] = [
   ["Round 1 (Online)", "June 15 - July 25, 2026"],
-  ["Round 2 (Offline)", "August 8 - 9, 2026"],
+  ["Round 2 (Online)", "August 7 - 8, 2026"],
   ["Venue (Round 2)", "Online mode"],
   ["Participation", "Top 16 teams from Round 1"],
 ];
@@ -30,7 +30,7 @@ export default function About() {
             className="flex items-baseline justify-between border-t border-white/10 pt-5 mb-14 md:mb-20 font-mono text-[10px] tracking-[0.3em] uppercase text-white/45"
           >
             <span>Mission - 01</span>
-            <span className="hidden sm:block">Jun 15 — Aug 09 · 2026</span>
+            <span className="hidden sm:block">Jun 15 — Aug 08 · 2026</span>
           </motion.div>
 
           {/* Headline */}
