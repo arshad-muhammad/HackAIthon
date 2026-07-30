@@ -38,13 +38,13 @@ export const FAQS: FAQItem[] = [
   {
     question: "Where is Hack[AI]Thon 2.0 2026 held?",
     answer:
-      "Round 1 is conducted online. Round 2 (Offline Finals) is hosted at VRIF VTU Belagavi, Karnataka on August 8 - 9, 2026, exclusively for the top 16 selected teams.",
+      "Final Round (Online Finals) is hosted at VRIF VTU Belagavi, Karnataka on August 7 - 8, 2026, exclusively for the top 16 selected teams.",
   },
-  {
-    question: "What are the two rounds of the hackathon?",
-    answer:
-      "Round 1 (Online Screening): June 15 – July 25, 2026, where teams identify bugs and improve a waste classification dataset using data-centric AI techniques. The top 16 teams qualify for Round 2 (Online Finals): August 8 – 9, 2026, where they build data pipelines and leverage 3LC.ai to systematically refine datasets and retrain models for maximum performance.",
-  },
+  // {
+  //   question: "What are the two rounds of the hackathon?",
+  //   answer:
+  //     "Round 1 (Online Screening): June 15 – July 25, 2026, where teams identify bugs and improve a waste classification dataset using data-centric AI techniques. The top 16 teams qualify for Round 2 (Online Finals): August 8 – 9, 2026, where they build data pipelines and leverage 3LC.ai to systematically refine datasets and retrain models for maximum performance.",
+  // },
   {
     question: "What is the prize pool for Hack[AI]Thon 2.0 2026?",
     answer:
