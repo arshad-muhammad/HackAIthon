@@ -4,7 +4,7 @@
 </div>
 
 ## Overview
-**Hack[AI]Thon 2.0 2026** is the official landing page for the premium 24-hour National Level Artificial Intelligence hackathon organized by Sphere Hive at VRIF VTU Belagavi, Karnataka.
+**Hack[AI]Thon 2.0 2026** is the official landing page for the premium 24-hour National Level Artificial Intelligence hackathon organized by Sphere Hive.
 
 This responsive, premium SPA (Single Page Application) serves as the primary informational hub for participants, providing details on:
 - 🗓️ Event Timelines & Scheduling
