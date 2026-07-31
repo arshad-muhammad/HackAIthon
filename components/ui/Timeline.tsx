@@ -7,8 +7,7 @@ type Item = {
   time: string;
   title: string;
   desc: string;
-  phase: "Final Round";
-  // phase: "Round 1" | "Selection" | "Round 2";
+  phase: "Final Round" | "Round 1" | "Selection" | "Round 2";
 };
 
 const schedule: Item[] = [
