@@ -74,7 +74,7 @@ export default function Hero() {
             }}
           >
             <div className="flex items-center justify-center gap-1 sm:gap-2 select-none">
-              <span>HACK</span>
+              <span>3LC HACK</span>
               <img
                 src="/logo-transparent.png"
                 alt="AI Logo"

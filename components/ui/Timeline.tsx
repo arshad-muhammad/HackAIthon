@@ -19,7 +19,7 @@ const schedule: Item[] = [
   },
   {
     time: "August 7, 2026 · 10:00 AM",
-    title: "Online Hacking Commences",
+    title: "Hacking Commences",
     desc: "Teams assemble, get baseline models, and begin data optimization using 3LC.ai.",
     phase: "Final Round",
   },

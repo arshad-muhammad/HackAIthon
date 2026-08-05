@@ -35,7 +35,7 @@ const stats: Stat[] = [
   {
     label: "Arena",
     staticValue: "VRIF VTU",
-    desc: "Belagavi · 24-hour online.",
+    desc: "Belagavi · 24-hour",
   },
 ];
 
