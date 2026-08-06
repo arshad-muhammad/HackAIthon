@@ -56,87 +56,6 @@ export default function Challenge() {
 
           {/* Grid Layout for Rounds */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 border-t border-white/10 pt-12">
-            {/* Round 1 Card */}
-            <motion.div
-              {...fade}
-              transition={{ delay: 0.1 }}
-              className="group flex flex-col justify-between"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-6">
-                  <span className="chip">
-                    <span className="chip-dot" />
-                    Round 01 · Online
-                  </span>
-                  <span className="text-[10px] font-mono text-white/35">
-                    June 15 - July 25, 2026
-                  </span>
-                </div>
-
-                <h3 className="font-display text-xl font-black text-white tracking-tight uppercase mb-4 group-hover:text-space-purple-glow transition-colors">
-                  Data Detective: Finding Hidden Problems
-                </h3>
-
-                <p className="text-[13px] text-white/70 leading-relaxed mb-6 font-light">
-                  Inspect the provided dataset to spot introduced bugs that
-                  degrade classifier accuracy. Work strictly on data quality
-                  without touching the baseline model.
-                </p>
-
-                {/* Sub-details */}
-                <div className="space-y-5 border-t border-white/10 pt-6 mb-6">
-                  <div>
-                    <h4 className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/45 mb-1">
-                      Dataset Provided
-                    </h4>
-                    <p className="text-[12px] text-white/80 font-light leading-relaxed">
-                      500 Labeled + 100 Unlabeled images across 5 classes
-                      (Plastic, Paper, Metal, Glass, Organic Waste).
-                    </p>
-                  </div>
-
-                  <div>
-                    <h4 className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/45 mb-1">
-                      Introduced Bugs
-                    </h4>
-                    <p className="text-[12px] text-white/80 font-light leading-relaxed">
-                      Wrong labels, duplicate images, blurry images, class
-                      imbalance, and outliers.
-                    </p>
-                  </div>
-
-                  <div>
-                    <h4 className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/45 mb-1">
-                      Round 1 Submission
-                    </h4>
-                    <p className="text-[12px] text-white/80 font-light leading-relaxed">
-                      Max 5-slide PPT or 3-page PDF auditing the dataset
-                      (Overview, problems, evidence, fixes, and expected
-                      impact).
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mb-6">
-                  <Link
-                    href="/resources"
-                    className="btn-primary px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.15em] w-full justify-center"
-                  >
-                    Access Resources & Dataset
-                  </Link>
-                </div>
-              </div>
-
-              <div className="border-t border-white/5 pt-6 flex items-center justify-between">
-                <span className="font-mono text-[10px] tracking-[0.2em] text-white/35 uppercase">
-                  Selection
-                </span>
-                <span className="text-[11px] text-white font-bold uppercase tracking-wider">
-                  Top 16 Teams Selected
-                </span>
-              </div>
-            </motion.div>
-
             {/* Round 2 Card */}
             <motion.div
               {...fade}
@@ -198,15 +117,6 @@ export default function Challenge() {
                     </p>
                   </div>
                 </div>
-              </div>
-
-              <div className="border-t border-white/5 pt-6 flex items-center justify-between">
-                <span className="font-mono text-[10px] tracking-[0.2em] text-white/35 uppercase">
-                  Venue Location
-                </span>
-                <span className="text-[11px] text-white font-bold uppercase tracking-wider">
-                  Online
-                </span>
               </div>
             </motion.div>
           </div>

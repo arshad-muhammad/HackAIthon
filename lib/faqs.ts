@@ -35,11 +35,11 @@ export const FAQS: FAQItem[] = [
     answer:
       "No prior expertise is required. Mentors and warm-up materials are provided so any motivated builder can compete on day one.",
   },
-  {
-    question: "Where is Hack[AI]Thon 2.0 2026 held?",
-    answer:
-      "Final Round (Online Finals) is hosted at VRIF VTU Belagavi, Karnataka on August 7 - 8, 2026, exclusively for the top 16 selected teams.",
-  },
+  // {
+  //   question: "Where is Hack[AI]Thon 2.0 2026 held?",
+  //   answer:
+  //     "Final Round (Online Finals) is hosted at VRIF VTU Belagavi, Karnataka on August 7 - 8, 2026, exclusively for the top 16 selected teams.",
+  // },
   // {
   //   question: "What are the two rounds of the hackathon?",
   //   answer:
